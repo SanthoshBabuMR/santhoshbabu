@@ -7,6 +7,7 @@
 
 * [nodeJS] 
 * [hapijs]
+* [inert]
 
 ### Download application
 
@@ -34,7 +35,7 @@ hapijs
 
 [nodeJS]: <https://nodejs.org/en/>
 [hapijs]: <http://hapijs.com/>
-
+[inert]: <https://www.npmjs.com/package/inert>
 
 [https://github.com/dwyl/learn-hapi]: <https://github.com/dwyl/learn-hapi>
 [http://stackoverflow.com/questions/30469767/how-do-express-and-hapi-compare-to-each-other]: <http://stackoverflow.com/questions/30469767/how-do-express-and-hapi-compare-to-each-other>

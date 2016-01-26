@@ -5,17 +5,27 @@ const hapi = require('hapi');
 const server = new hapi.Server();
 
 server.connection({
-	port: process.env.PORT || 5000
+	port: process.env.PORT || 6234
 });
 
-server.route({
+server.register(require('inert'), (err) => {
+  if (err) {
+    throw err;
+  }
+
+  server.route({
     method: 'GET',
     path: '/',
     handler: function (request, reply) {
-        reply('Hello, world!');
+    	console.log(11)
+      reply.file('target/index.html');
     }
-});
+  });
 
-server.start(()=> {
-	console.log('Server running at: ', server.info.uri);
+  server.start((err)=> {
+  	if(err) {
+  		throw err;
+  	}
+		console.log('Server running at: ', server.info.uri);
+	});
 });
