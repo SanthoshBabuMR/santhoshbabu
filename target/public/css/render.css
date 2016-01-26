@@ -1,0 +1,123 @@
+*,
+*:after,
+*:before {
+	line-height: 1.5;
+	box-sizing: border-box;
+}
+/* typography begin */
+body {
+	font-family: arial;
+}
+body,
+div,
+span,
+p,
+a,
+li {
+	font-size: 13px;
+}
+a {
+	color: rgb(0, 0, 238);
+}
+/* typography end */
+
+/* headers begin */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-top: 0;
+};
+/* headers begin */
+
+/* grids begin */
+[class*="grid-"] {
+	width: 100%;
+	margin-bottom: 10px;
+}
+[class*="grid-"] .row {
+	padding: 0 0 6px 0;
+}
+[class*="grid-"] .row:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+[class*="grid-"] [class*="block-"] {
+	float: left;
+	padding: 3px 5px;
+}
+[class*="grid-"] .block {
+	float: left;
+	width: 100%;
+	padding: 3px 5px;
+}
+.grid-a [class*="block-"] {
+	width: 50%;
+}
+.grid-b [class*="block-"] {
+	width: 33%;
+}
+/* grids end */
+
+/* clear float begin */
+.clrAft:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+/* clear float end */
+
+/* code-block begin */
+.code-block {
+	font-family: monospace;
+	font-style: normal;
+	display: block;
+	border-left: 1px solid rgba(0,0,255,.5);
+	padding-left: 10px;
+}
+.code-block span {
+	padding-left: 20px;
+	display: block;
+}
+.code-block span span {
+	padding-left: 30px;
+}
+.code-block span span span {
+	padding-left: 40px;
+}
+.code-block span span span span {
+	padding-left: 50px;
+}
+/* code-block end */
+
+/* mark begin */
+mark {
+	background: #ffffff;
+}
+mark.severe {
+	color: rgba(209, 24, 16, 1);
+}
+mark.eg {
+	color: rgba(211, 23, 166, 1);
+}
+mark.imp {
+	color: rgba(209, 24, 16, 1);
+}
+mark.highlt {
+	color: rgba(48, 100, 231, 1);
+}
+/* mark end */
+
+.hide {
+	display: none;
+}
+hr {
+	line-height: 1px;
+	height: 1px;
+	width: 100%;
+	border: none;
+	background: #cccccc;
+}
