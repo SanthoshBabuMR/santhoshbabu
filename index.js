@@ -4,7 +4,9 @@ const hapi = require('hapi');
 
 const server = new hapi.Server();
 
-server.connection();
+server.connection({
+	port: process.env.PORT || 5000
+});
 
 server.route({
     method: 'GET',
