@@ -27,6 +27,8 @@ $ npm start
 hapijs
 * [https://github.com/dwyl/learn-hapi] 
 * [http://stackoverflow.com/questions/30469767/how-do-express-and-hapi-compare-to-each-other]
+
+heroku
 * [https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction]
 
 ---
