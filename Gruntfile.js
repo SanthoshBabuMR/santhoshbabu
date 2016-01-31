@@ -23,14 +23,19 @@ module.exports = function(grunt) {
           {expand: true, cwd: 'src/public', src: ['css/**/*', 'images/**/*'], dest: 'target/public/'}          
         ],
       },
-      },
+    },
+    clean: {
+      target: [ "target/**/*" ]
+    }
   });
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
   
   grunt.registerTask('compileJade', 'Convert Jade templates into html templates', ['jade']);
+  grunt.registerTask('cleanTarget', 'clean target directory for new build', ['clean']);
 
-  grunt.registerTask('default', 'create build', ['copy', 'compileJade']);
+  grunt.registerTask('default', 'create build', ['cleanTarget', 'copy', 'compileJade']);
 };

@@ -1,0 +1,1 @@
+This target directory will be cleaned during build.
