@@ -8,7 +8,7 @@ const Server  = new Hapi.Server({
   connections: {
     routes: {
       files: {
-        relativeTo: Path.join(__dirname, 'src/public')
+        relativeTo: Path.join(__dirname, 'target/public/')
       }
     }
   }
@@ -25,17 +25,29 @@ Server.register(Inert, (err)=> {
 });
 
 // configure routes
-Server.route({
-  method: 'GET',
-  path: '/{param*}',
-  handler: {
-    directory: {
-      path: '.',
-      redirectToSlash: true,
-      index: true
+Server.route([
+  {
+    method: 'GET',
+    path: '/{file*}',
+    handler: {
+      file:  function(request) {
+        var file = request.params.file;
+        var path = '';
+        if(!file) {
+          path += 'views/index.html';
+        }
+        else if(file.match(/[\/^]*html$/)) {
+          path += 'views/' + file;
+        }
+        else {
+          path += file;
+        }
+        //console.log(path)
+        return path;
+      }
     }
-  }
-});
+  }  
+]);
 
 // start server
 Server.start((err)=> {

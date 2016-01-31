@@ -1,0 +1,34 @@
+extends ../template/default-layout.jade
+
+block title
+  title Fibonacci Sequence
+
+block content
+  div.container
+    include ../template/navigation.jade
+    section
+      h1 Fibonacci Sequence
+      p.
+        The Fibonacci Sequence is the series of numbers:
+        <br>
+        0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ..
+        <br>
+        The sequence is formed by adding up the two numbers before it.
+      span.bg-primary fibonacci using recursion:
+      pre function fibonacci(n) {
+        |   if( n === 0 || n === 1 ) {
+        |     return 1;
+        |   }
+        |   return n + fibonacci(n-1)
+        | }
+      span.bg-primary fibonacci using iteration:
+      pre function fibonacci(n) {
+        |   if( n === 0 || n === 1 ) {
+        |     return 1;
+        |   }
+        |   var result = 0;
+        |   for(var i=n;i&gt;=0;i--) {
+        |     result = result + i;
+        |   }
+        |   return result;
+        | }
