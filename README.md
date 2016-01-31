@@ -15,6 +15,12 @@
 $ git clone https://github.com/html5webster/santhoshbabu.git santhoshbabu
 ```
 
+### Create Build
+```sh
+$ cd santhoshbabu
+$ grunt
+```
+
 ### Launch Server
 ```sh
 $ cd santhoshbabu
