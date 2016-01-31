@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fibonacci Sequence</title>
     <link rel="icon" type="image/png" href="/images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- css begin -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/render.css" />
     <!-- css end -->
   </head>
@@ -13,28 +15,32 @@
 
     <!-- doc-wrap begin -->
     <div class="doc-wrap">
-      <section>
-        <dl>
-          <dt>Fibonacci Sequence</dt>
-          <dd>
+      <div class="container">
+        <nav class="navbar navbar-default">
+          <ul class="nav navbar-nav">
+            <li> 
+              <a href="/">Home</a>
+            </li>
+          </ul>
+        </nav>
+        <section>
+          <h1>Fibonacci Sequence</h1>
+          <p>
             The Fibonacci Sequence is the series of numbers:
             <br />
             0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ..
             <br />
             The sequence is formed by adding up the two numbers before it.
-          </dd>
-        </dl>
-<pre><code>
-fibonacci using recursion:
+          </p>
+<pre>fibonacci using recursion:
 
 function fibonacci(n) {
   if( n === 0 || n === 1 ) return 1;
   return n + fibonacci(n-1)
 }
-</pre></code>
+</pre>
 
-<pre><code>
-fibonacci using iteration:
+<pre>fibonacci using iteration:
 
 function fibonacci(n) {
   if( n === 0 || n === 1 ) return 1;
@@ -44,9 +50,11 @@ function fibonacci(n) {
   }
   return result;
 }
-</pre></code>
+</pre>
 
-      </section>
+        </section>
+      </div>
+      
     </div>
     <!-- doc-wrap end -->
       
