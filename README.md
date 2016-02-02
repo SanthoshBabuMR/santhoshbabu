@@ -40,8 +40,14 @@ heroku
 
 ---
 
-### Github repo details
-* default gitattributes settings for web application [https://github.com/Danimoth/gitattributes/blob/master/Web.gitattributes] 
+#### github repo setup details
+* default gitattributes settings for web application [https://github.com/Danimoth/gitattributes/blob/master/Web.gitattributes]
+
+#### configure npm to run commands from cli
+* Configuring npm scripts field [http://substack.net/task_automation_with_npm_run]
+
+#### configure editor coding style
+* consistent coding styles using editor config [http://editorconfig.org/]
 
 [nodeJS]: <https://nodejs.org/en/>
 [hapijs]: <http://hapijs.com/>
@@ -54,3 +60,5 @@ heroku
 
 [https://github.com/Danimoth/gitattributes/blob/master/Web.gitattributes]: <https://github.com/Danimoth/gitattributes/blob/master/Web.gitattributes>
 [https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction]: <https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction>
+[http://substack.net/task_automation_with_npm_run]: <http://substack.net/task_automation_with_npm_run>
+[http://editorconfig.org/]: <http://editorconfig.org/>

@@ -45,9 +45,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-newer'); // aids other grunt tasks, by running tasks only on the file(s) modified;
 
   
-  grunt.registerTask('compileJade', 'convert Jade templates into html templates', ['newer:jade']);
-  grunt.registerTask('cleanTarget', 'clean target directory for new build', ['clean']);
-  grunt.registerTask('watchJade', 'watch over jade templates for changes', ['watch']);
+  grunt.registerTask('compile-jade', 'convert Jade templates into html templates', ['newer:jade']);
+  grunt.registerTask('clean-target', 'clean target directory for new build', ['clean']);
+  grunt.registerTask('watch-jade', 'watch over jade templates for changes', ['watch:jade']);
 
-  grunt.registerTask('default', 'create build', ['cleanTarget', 'copy', 'compileJade']);
+  grunt.registerTask('default', 'create build', ['clean-target', 'copy', 'compile-jade']);
 };
