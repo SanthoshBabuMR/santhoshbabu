@@ -26,16 +26,28 @@ module.exports = function(grunt) {
     },
     clean: {
       target: [ "target/**/*" ]
-    }
+    },
+    watch: {
+      jade: {
+        files: ['src/public/views/**/*.jade'],
+        tasks: ['newer:jade'],
+        options: {
+          debounceDelay: 500
+        },
+      },
+    },
   });
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-newer'); // aids other grunt tasks, by running tasks only on the file(s) modified;
 
   
-  grunt.registerTask('compileJade', 'Convert Jade templates into html templates', ['jade']);
+  grunt.registerTask('compileJade', 'convert Jade templates into html templates', ['newer:jade']);
   grunt.registerTask('cleanTarget', 'clean target directory for new build', ['clean']);
+  grunt.registerTask('watchJade', 'watch over jade templates for changes', ['watch']);
 
   grunt.registerTask('default', 'create build', ['cleanTarget', 'copy', 'compileJade']);
 };
