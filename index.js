@@ -1,5 +1,6 @@
 'use strict';
 
+const URL     = require('url');
 const Path    = require('path');
 const Hapi    = require('hapi');
 const Inert   = require('inert');
@@ -31,22 +32,30 @@ Server.route([
     path: '/{file*}',
     handler: {
       file:  function(request) {
-        var file = request.params.file;
-        var path = '';
+        var file = request.params.file,
+            path = '',
+            fileType = file? Path.extname(URL.parse(file).pathname) : undefined;
         if(!file) {
           path += 'views/index.html';
         }
-        else if(file.match(/[\/^]*html$/)) {
+        else if(!fileType) {
+          file += (file[file.length-1] !== '/')? '/' : '';
+          path += 'views/' + file + 'index.html';
+        }
+        else if(fileType.toLowerCase() === '.html') {
           path += 'views/' + file;
         }
         else {
           path += file;
         }
-        //console.log(path)
+        //console.log('file requested : ' + file);
+        //console.log('file type      : ' + fileType);
+        //console.log('file path      : ' + path);
+        //console.log('---');
         return path;
       }
     }
-  }  
+  }
 ]);
 
 // start server

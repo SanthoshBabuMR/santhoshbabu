@@ -10,6 +10,12 @@ module.exports = function(grunt) {
         files: [ {
           cwd: "src/public/views",
           src: ["**/*.jade"],
+          filter: function(filepath) {
+            var lastIndexOfUnderscore   = filepath.lastIndexOf('_');
+                lastIndexOfSlash        = filepath.lastIndexOf('\\');
+            // alternative way to test for jade partial using regex: return !(/_.*\.jade$/.test(filepath));
+            return !( lastIndexOfUnderscore > -1 && lastIndexOfSlash > -1 && ( lastIndexOfSlash < lastIndexOfUnderscore) );
+          },
           dest: "target/public/views",
           expand: true,
           ext: ".html"
@@ -20,7 +26,7 @@ module.exports = function(grunt) {
       main: {
         files: [
           // includes files within path
-          {expand: true, cwd: 'src/public', src: ['css/**/*', 'images/**/*'], dest: 'target/public/'}          
+          {expand: true, cwd: 'src/public', src: ['css/**/*', 'images/**/*'], dest: 'target/public/'}
         ],
       },
     },
@@ -30,7 +36,7 @@ module.exports = function(grunt) {
     watch: {
       jade: {
         files: ['src/public/views/**/*.jade'],
-        tasks: ['newer:jade'],
+        tasks: ['jade'],
         options: {
           debounceDelay: 500
         },
@@ -44,8 +50,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-newer'); // aids other grunt tasks, by running tasks only on the file(s) modified;
 
-  
-  grunt.registerTask('compile-jade', 'convert Jade templates into html templates', ['newer:jade']);
+
+  grunt.registerTask('compile-jade', 'convert Jade templates into html templates', ['jade']);
   grunt.registerTask('clean-target', 'clean target directory for new build', ['clean']);
   grunt.registerTask('watch-jade', 'watch over jade templates for changes', ['watch:jade']);
 

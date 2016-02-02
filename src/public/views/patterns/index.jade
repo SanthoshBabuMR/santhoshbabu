@@ -1,0 +1,13 @@
+extends ../../template/default-layout.jade
+
+block title
+  title JS Patterns
+
+block content
+  div.container
+    include ../../template/navigation.jade
+    section
+      include _intro.jade
+      include _category.jade
+      include _js-pattern-list.jade
+      include _ref.jade
