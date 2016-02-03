@@ -12,7 +12,7 @@ block content
       h1 Quotes
       ul(style='font-size:1.5em;')
 
-        - var quotes = [{"text":"holding onto anger is like drinking poison and expecting the other person to die","author":"gautama buddha"},{"text":"if you want to be a lion, you must train with lions","author":"carlson gracie"},{"text":"if you want to live a happy life, tie it to a goal, not to people or objects","author":"albert einstein"}]
+        - var quotes = [{"text":"holding onto anger is like drinking poison and expecting the other person to die","author":"gautama buddha"},{"text":"when there is harmony between mind,heart and resolution ,then nothing is impossible","author":"rig veda"},{"text":"if you want to be a lion, you must train with lions","author":"carlson gracie"},{"text":"if you want to live a happy life, tie it to a goal, not to people or objects","author":"albert einstein"}]
 
           each item in quotes
             li!= item.text + (item.author? "<br/>- " + item.author: "")
