@@ -1,0 +1,40 @@
+extends ../../../template/default-layout.jade
+
+block title
+  title Module Pattern
+
+block content
+  div.container
+    include ../../../template/navigation.jade
+    div.article-navigator
+      span.prev
+        a(href="/patterns/constructor-pattern/", title="previous article") Constructor Pattern
+
+    section.page-navigation
+      ul.list
+        li
+          a(href="#bmIntroduction") Introduction
+
+    section.page-content
+      h1.page-title Module Pattern
+      include ../_breadcrumb.jade
+      section.batch
+        article.group
+          h3.group-title#bmIntroduction
+            | Introduction
+          div.group-content
+            ul.list
+              li
+                | Modules enable cleanly separated and organized code.
+              li
+                | Different ways of implementing modules in JS:
+                ol
+                  li The Module pattern
+                  li Object literal notation
+                  li AMD modules
+                  li CommonJS modules
+                  li ECMAScript Harmony modules
+
+     div.article-navigator
+      span.prev
+        a(href="/patterns/constructor-pattern/", title="previous article") Constructor Pattern

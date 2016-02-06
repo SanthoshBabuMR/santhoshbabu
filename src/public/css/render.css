@@ -1,11 +1,21 @@
+.doc-wrap {
+  padding: 0 0 10px 0;
+}
 /* begin: grounp component */
 .batch {
   padding: 15px;
 }
 
+.batch:after {
+  content: '#  - #  - #  - #  - # ';
+  display: block;
+  text-align: center;
+}
 .batch-title {
   margin: 0;
   padding: 0 0 10px 0;
+  font-family: Tahoma, Geneva, sans-serif;
+  letter-spacing: 1px;
 }
 
 .group {
@@ -25,6 +35,19 @@
   padding: 10px 0 0 0;
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+.group-sub-title {
+}
+.group-sub-title:after {
+  /*content: '\20\7D';*/
+}
+.group-sub-title:before {
+  /*content: '\7B\20';*/
+  content: '\21E5\20';
+}
+*[id*="bm"]:before {
+  content: "# ";
+}
+.batch-title:target,
 .group-title:target{
   animation-name: fadeInRight;
   -webkit-animation-duration: 1s;
@@ -97,7 +120,6 @@
 }
 .group-content {
   margin: 15px 0 0 0;
-  font-style: italic;
   font-family: Georgia, Cambria, serif;
 }
 
@@ -105,11 +127,16 @@
   border-left: 3px solid #A0AABF;
   padding: 10px;
   margin: 0 0 15px 0;
+  font-style: italic;
 }
 
 .group-content .list {
   margin: 0;
   padding: 0 0 0 10px;
+}
+
+.group-content .list pre {
+  margin-top: 10px;
 }
 
 .group-content .list li {
@@ -122,6 +149,8 @@
   border-bottom: 1px solid #EFEFEF;
   padding-bottom: 5px;
   margin-bottom: 15px;
+  font-family: Tahoma, Geneva, sans-serif;
+  letter-spacing: 1px;
   animation-name: fadeInDown;
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -197,9 +226,9 @@
   width: 20%;
   padding: 15px 15px 15px 0;
 }
+
 .page-navigation + .page-content {
-  float: right;
-  width: 80%;
+  margin-left: 20%;
   padding: 0 0 0 15px;
 }
 /* end: page-* */
@@ -221,3 +250,28 @@
   text-decoration: underline;
 }
 /* end: page-navigation */
+
+/* begin: article-navigator */
+.article-navigator {
+  margin-left: 20%;
+}
+.article-navigator:after {
+  content: '';
+  display: block;
+  clear: both;
+  line-height: 0;
+  height: 0;
+}
+.article-navigator .prev {
+  float: left;
+}
+.article-navigator .prev a:before {
+  content: '\3C\3C\20';
+}
+.article-navigator .next {
+  float: right;
+}
+.article-navigator .next a:after {
+  content: '\20\3E\3E';
+}
+/* end: article-navigator */

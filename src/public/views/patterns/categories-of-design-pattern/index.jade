@@ -1,0 +1,59 @@
+extends ../../../template/default-layout.jade
+
+block title
+  title JS Patterns
+
+block content
+  div.container
+    include ../../../template/navigation.jade
+    div.article-navigator
+      span.prev
+        a(href="/patterns/", title="previous article") Patterns
+      span.next
+        a(href="/patterns/constructor-pattern/", title="previous article") Constructor Pattern
+
+    section.page-navigation
+      ul.list
+        li
+          <a href="#bmCreationalDesignPatterns">Creational Design Patterns</a>
+        li
+          <a href="#bmStructuralDesignPatterns">Structural Design Patterns</a>
+        li
+          <a href="#bmBehavioralDesignPatterns">Behavioral Design Patterns</a>
+
+    section.page-content
+      h1.page-title
+        | Categories Of Design Pattern
+      include ../_breadcrumb.jade
+      section.batch
+        article.group
+          h3.group-title#bmCreationalDesignPatterns
+            | Creational Design Patterns
+          div.group-content
+            div.group-main
+              | Based on the concept of creating an object.
+              br
+              | Eg: Constructor, Factory, Abstract, Prototype, Singleton and Builder.
+
+        article.group
+          h3.group-title#bmStructuralDesignPatterns
+            | Structural Design Patterns
+          div.group-content
+            div.group-main
+              | Based on the idea of building object composition i.e.  how object's data and methods are structed.
+              br
+              | Eg: Decorator, Facade, Flyweight, Adapter and Proxy.
+
+        article.group
+          h3.group-title#bmBehavioralDesignPatterns
+            | Behavioral Design Patterns
+          div.group-content
+            div.group-main
+              | Based on the way objects play and work together i.e. communication
+              br
+              | Eg: Iterator, Mediator, Observer and Visitor.
+    div.article-navigator
+      span.prev
+        a(href="/patterns/", title="previous article") Patterns
+      span.next
+        a(href="/patterns/constructor-pattern/", title="previous article") Constructor Pattern

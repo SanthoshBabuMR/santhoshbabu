@@ -6,6 +6,10 @@ block title
 block content
   div.container
     include ../../../template/navigation.jade
+    div.article-navigator
+      span.prev
+        a(href="/javascript-language/javascript-introduction/", title="previous article") JavaScript Introduction
+
     section.page-navigation
       ul.list
         li
@@ -20,6 +24,7 @@ block content
           <a href="#bmArguments">arguments</a>
         li
           <a href="#bmHoisting">hoisting</a>
+
     section.page-content
       h1.page-title Function basics
       include ../_breadcrumb.jade
@@ -135,3 +140,7 @@ block content
                   |   };
                   | };
                   | fn();
+
+    div.article-navigator
+      span.prev
+        a(href="/javascript-language/javascript-introduction/", title="previous article") JavaScript Introduction

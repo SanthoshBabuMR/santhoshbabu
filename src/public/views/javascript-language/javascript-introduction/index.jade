@@ -6,6 +6,12 @@ block title
 block content
   div.container
     include ../../../template/navigation.jade
+    div.article-navigator
+      span.prev
+        a(href="/javascript-language/", title="previous article") JavaScript Language
+      span.next
+        a(href="/javascript-language/function-basics", title="next article") Function basics
+
     section.page-navigation
       ul.list
         li
@@ -16,12 +22,13 @@ block content
           <a href="#bmHistory">History</a>
         li
           <a href="#bmRef">Ref</a>
+
     section.page-content
       h1.page-title JavaScript Introduction
       include ../_breadcrumb.jade
       section.batch
         article.group
-          h2.group-title#bmJavascript
+          h3.group-title#bmJavascript
             | JavaScript
           div.group-content
             div.group-main
@@ -35,7 +42,7 @@ block content
                 | Eg: Web browser and 'document' object;
 
         article.group
-          h2.group-title#bmECMAScript
+          h3.group-title#bmECMAScript
             | ECMAScript
           div.group-content
             div.group-main
@@ -45,16 +52,22 @@ block content
                 | JavaScript is standardized at Ecma International — the European association for standardizing information and communication systems to deliver a standardized, international programming language based on JavaScript.
 
         article.group
-          h2.group-title#bmHistory
+          h3.group-title#bmHistory
             | History
           div.group-content
             div.group-main
               | developed in May 1995 by Brendan Eich, for Netscape Communications
 
         article.group
-          h2.group-title#bmRef
+          h3.group-title#bmRef
             | Ref
           div.group-content
             ul.list
               li
                 a(href="https://en.wikipedia.org/wiki/JavaScript") https://en.wikipedia.org/wiki/JavaScript
+
+    div.article-navigator
+      span.prev
+        a(href="/javascript-language/", title="previous article") JavaScript Language
+      span.next
+        a(href="/javascript-language/function-basics", title="next article") Function basics

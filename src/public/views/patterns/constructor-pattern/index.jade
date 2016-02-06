@@ -1,0 +1,138 @@
+extends ../../../template/default-layout.jade
+
+block title
+  title Constructor Pattern
+
+block content
+  div.container
+    include ../../../template/navigation.jade
+    div.article-navigator
+      span.prev
+        a(href="/patterns/categories-of-design-pattern/", title="previous article") Categories Of Design Pattern
+      span.next
+        a(href="/patterns/module-pattern/", title="previous article") Module Pattern
+
+    section.page-navigation
+      ul.list
+        li
+          a(href="#bmCommonWaysToCreateNewObjects") Common ways to create new objects</a>
+        li
+          a(href="#bmCommonWaysToGetSetObjectsProperties") Common ways to get/set object's properties
+        li
+          a(href="#bmConstructors") Constructors
+
+    section.page-content
+      h1.page-title Constructor Pattern
+      include ../_breadcrumb.jade
+      section.batch
+        article.group
+          h3.group-title#bmCommonWaysToCreateNewObjects
+            | Common ways to create new objects
+          div.group-content
+            h4.group-sub-title
+              | Using object literal
+            pre
+              | var obj = {};
+            h4.group-sub-title
+              | Using Object.create
+            pre
+              | var obj = Object.create( myObj.prototype );
+            h4.group-sub-title
+              | Using constructor function
+            pre
+              | var obj = new ConstructorFn();
+        article.group
+          h3.group-title#bmCommonWaysToGetSetObjectsProperties
+            | Common ways to get/set object's properties
+          div.group-content
+            h4.group-sub-title
+              | Dot notation
+            ul.list
+              li
+                | with dot notation, property names must be a valid javascript identifier i.e. can include any combination of alphabets, numbers, special character underscore ("_") and dollar sign ("$") and cannot start with a number.
+                pre
+                  | var obj = {};
+                  | obj.myProp = "Hello World!";
+                  | var val    = obj.myProp;
+            h4.group-sub-title
+              | Bracket notation
+            ul.list
+              li
+                | with bracket notation, property names must be enclosed in quotes and does not have to be a valid identifier;
+                pre
+                  | var obj = {};
+                  | obj["myProp"] = "Hello World!";
+                  | var val       = obj["myProp"];
+            h4.group-sub-title
+              | Object.defineProperty
+            ul.list
+              li
+                | helps to create property for objects with configuration option
+              pre
+                | var obj = {};
+                | Object.defineProperty( obj, "myProp", {
+                |   value: "Hello World!",
+                |   writable: true,
+                |   enumerable: true,
+                |   configurable: true
+                | });
+                | var val = obj.myProp; ( or ) var val = obj["myProp"];
+            h4.group-sub-title
+              | Object.defineProperties
+            ul.list
+              li
+                | same as Object.defineProperty, but with the ability to create multiple properties in one go
+              pre
+                | var obj = {};
+                | Object.defineProperties( obj, {
+                |   "myProp01": {
+                |     value: "Hello World 01!",
+                |     writable: true,
+                |     enumerable: true,
+                |     configurable: true
+                |   },
+                |   "myProp02": {
+                |     value: "Hello World 02!",
+                |     writable: true,
+                |     enumerable: true,
+                |     configurable: false
+                |   }
+                | });
+                | var val01 = obj.myProp01; ( or ) var val01 = obj["myProp01"];
+                | var val02 = obj.myProp02; ( or ) var val02 = obj["myProp02"];
+        article.group
+          h3.group-title#bmConstructors
+            | Constructors
+          div.group-content
+            div.group-main
+              | functions called by prefixing <code>new</code> operator act as constructor function in JS.
+            pre
+              | // constructor function 'Car'
+              | function Car(model, year) {
+              |   this.model      = model;
+              |   this.year       = year;
+              |   this.toString   = function() {
+              |     return this.model + " invented in year " + this.year;
+              |   }
+              | }
+              | Car.prototype.classification = "four-wheeler";
+              | Car.prototype.getModel = function() {
+              |   return this.model;
+              | };
+              | // creating instance of 'Car'
+              | var civic = new Car('Honda Civic', 2009);
+              | // call instance's toString method
+              | console.log( civic.toString() );
+            ul.list
+              li
+                | The instance object has instance properties and prototype properties
+              li
+                | Instance properties are those that are attached to 'this'; instance properties are not shared among the object's instances
+              li
+                | Prototype properties are those that are attached to the constructor function's 'prototype' chain, making them shared across instances
+
+    div.article-navigator
+      span.prev
+        a(href="/patterns/categories-of-design-pattern/", title="previous article") Categories Of Design Pattern
+      span.next
+        a(href="/patterns/module-pattern/", title="previous article") Module Pattern
