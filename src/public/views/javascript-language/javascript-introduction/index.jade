@@ -1,0 +1,60 @@
+extends ../../../template/default-layout.jade
+
+block title
+  title JavaScript Introduction
+
+block content
+  div.container
+    include ../../../template/navigation.jade
+    section.page-navigation
+      ul.list
+        li
+          <a href="#bmJavascript">JavaScript</a>
+        li
+          <a href="#bmECMAScript">ECMAScript</a>
+        li
+          <a href="#bmHistory">History</a>
+        li
+          <a href="#bmRef">Ref</a>
+    section.page-content
+      h1.page-title JavaScript Introduction
+      include ../_breadcrumb.jade
+      section.batch
+        article.group
+          h2.group-title#bmJavascript
+            | JavaScript
+          div.group-content
+            div.group-main
+              | a high-level, dynamic and interpreted programming language
+            ul.list
+              li
+                | JavaScript is prototype-based with first-class functions
+              li
+                | Inside a host environment (for example, a web browser, a node web server), JavaScript can be connected to the objects of its environment to provide programmatic control over them.
+              li
+                | Eg: Web browser and 'document' object;
+
+        article.group
+          h2.group-title#bmECMAScript
+            | ECMAScript
+          div.group-content
+            div.group-main
+              | official name of JavaScript;
+            ul.list
+              li
+                | JavaScript is standardized at Ecma International — the European association for standardizing information and communication systems to deliver a standardized, international programming language based on JavaScript.
+
+        article.group
+          h2.group-title#bmHistory
+            | History
+          div.group-content
+            div.group-main
+              | developed in May 1995 by Brendan Eich, for Netscape Communications
+
+        article.group
+          h2.group-title#bmRef
+            | Ref
+          div.group-content
+            ul.list
+              li
+                a(href="https://en.wikipedia.org/wiki/JavaScript") https://en.wikipedia.org/wiki/JavaScript

@@ -27,8 +27,14 @@ module.exports = function(grunt) {
         files: [
           // includes files within path
           {expand: true, cwd: 'src/public', src: ['css/**/*', 'images/**/*'], dest: 'target/public/'}
-        ],
+        ]
       },
+      css: {
+        files: [
+          // includes files within path
+          {expand: true, cwd: 'src/public', src: ['css/**/*'], dest: 'target/public/'}
+        ]
+      }
     },
     clean: {
       target: [ "target/**/*" ]
@@ -39,8 +45,15 @@ module.exports = function(grunt) {
         tasks: ['jade'],
         options: {
           debounceDelay: 500
-        },
+        }
       },
+      css: {
+        files: ['src/public/css/**/*'],
+        tasks: ['copy:css'],
+        options: {
+          debounceDelay: 500
+        }
+      }
     },
   });
   // These plugins provide necessary tasks.
@@ -53,7 +66,9 @@ module.exports = function(grunt) {
 
   grunt.registerTask('compile-jade', 'convert Jade templates into html templates', ['jade']);
   grunt.registerTask('clean-target', 'clean target directory for new build', ['clean']);
+
   grunt.registerTask('watch-jade', 'watch over jade templates for changes', ['watch:jade']);
+  grunt.registerTask('watch-css', 'watch over css files for changes', ['watch:css']);
 
   grunt.registerTask('default', 'create build', ['clean-target', 'copy', 'compile-jade']);
 };

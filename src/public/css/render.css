@@ -1,0 +1,223 @@
+/* begin: grounp component */
+.batch {
+  padding: 15px;
+}
+
+.batch-title {
+  margin: 0;
+  padding: 0 0 10px 0;
+}
+
+.group {
+  padding: 5px 5px 10px 5px;
+  margin: 0 0 10px 0;
+}
+
+.group:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+.group-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #959595;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 10px 0 0 0;
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.group-title:target{
+  animation-name: fadeInRight;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-moz-keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(-20px);
+        -ms-transform: translateX(-20px);
+        transform: translateX(-20px)
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0)
+    }
+}
+
+@-webkit-keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(-20px);
+        -ms-transform: translateX(-20px);
+        transform: translateX(-20px)
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0)
+    }
+}
+
+@-o-keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(-20px);
+        -ms-transform: translateX(-20px);
+        transform: translateX(-20px)
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0)
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(-20px);
+        -ms-transform: translateX(-20px);
+        transform: translateX(-20px)
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0)
+    }
+}
+.group-content {
+  margin: 15px 0 0 0;
+  font-style: italic;
+  font-family: Georgia, Cambria, serif;
+}
+
+.group-content .group-main {
+  border-left: 3px solid #A0AABF;
+  padding: 10px;
+  margin: 0 0 15px 0;
+}
+
+.group-content .list {
+  margin: 0;
+  padding: 0 0 0 10px;
+}
+
+.group-content .list li {
+  margin: 0 0 5px 5px;
+}
+/* end: grounp component */
+
+/* begin: page-* */
+.page-title {
+  border-bottom: 1px solid #EFEFEF;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-moz-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
+        transform: translateY(-20px)
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
+        transform: translateY(-20px)
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+@-o-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
+        transform: translateY(-20px)
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
+        transform: translateY(-20px)
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+.page-navigation {
+  float: left;
+  width: 20%;
+  padding: 15px 15px 15px 0;
+}
+.page-navigation + .page-content {
+  float: right;
+  width: 80%;
+  padding: 0 0 0 15px;
+}
+/* end: page-* */
+
+/* begin: page-navigation */
+.page-navigation .list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.page-navigation .list li {
+  padding: 5px 0;
+}
+.page-navigation .list a {
+  display: inline-block;
+  padding: 2px 0;
+}
+.page-navigation .list a:focus{
+  text-decoration: underline;
+}
+/* end: page-navigation */
