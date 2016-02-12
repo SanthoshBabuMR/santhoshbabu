@@ -16,7 +16,7 @@ const Server  = new Hapi.Server({
 });
 
 Server.connection({
-	port: process.env.PORT || 6234
+  port: process.env.PORT || 6234
 });
 
 Server.register(Inert, (err)=> {
@@ -33,26 +33,28 @@ Server.route([
     handler: {
       file:  function(request) {
         var file = request.params.file,
-            path = '',
-            fileType = file? Path.extname(URL.parse(file).pathname) : undefined;
+            validPathToResource = '',
+            filePath = file? URL.parse(file).pathname : undefined,
+            fileType = filePath? Path.extname(filePath) : undefined;
         if(!file) {
-          path += 'views/index.html';
+          validPathToResource += 'views/index.html';
         }
         else if(!fileType) {
           file += (file[file.length-1] !== '/')? '/' : '';
-          path += 'views/' + file + 'index.html';
+          validPathToResource += 'views/' + file + 'index.html';
         }
         else if(fileType.toLowerCase() === '.html') {
-          path += 'views/' + file;
+          validPathToResource += 'views/' + file;
         }
         else {
-          path += file;
+          validPathToResource += file;
         }
-        //console.log('file requested : ' + file);
-        //console.log('file type      : ' + fileType);
-        //console.log('file path      : ' + path);
+        //console.log('file requested          : ' + file);
+        //console.log('file path provided      : ' + filePath);
+        //console.log('file type               : ' + fileType);
+        //console.log('valid path to resource  : ' + validPathToResource);
         //console.log('---');
-        return path;
+        return validPathToResource;
       }
     }
   }
@@ -60,8 +62,8 @@ Server.route([
 
 // start server
 Server.start((err)=> {
-	if(err) {
-		throw err;
-	}
-	console.log('Server running at: ', Server.info.uri);
+  if(err) {
+    throw err;
+  }
+  console.log('Server running at: ', Server.info.uri);
 });
