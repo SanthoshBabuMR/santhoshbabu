@@ -1,0 +1,20 @@
+- var quotes =
+
+extends ../../template/_default-layout.jade
+
+block title
+  title Quotes
+
+block content
+  div.container
+    include ../../template/_navigation.jade
+    section.page-content
+      h1.page-heading Quotes
+      ul
+
+        - var quotes = [{"text":"holding onto anger is like drinking poison and expecting the other person to die","author":"gautama buddha"},{"text":"when there is harmony between mind,heart and resolution ,then nothing is impossible","author":"rig veda"},{"text":"if you want to be a lion, you must train with lions","author":"carlson gracie"},{"text":"if you want to live a happy life, tie it to a goal, not to people or objects","author":"albert einstein"},{"text":"I was ahead in the slalom. But in the second run, everyone fell on a dangerous spot. I was beaten by a woman that got up faster than I did. I learned that people fall down, winners get up, and gold medal winners just get up faster.","author":"Bonnie St. John"}]
+
+          each item in quotes
+            li!= item.text + (item.author? "<br/>- " + item.author: "")
+
+
