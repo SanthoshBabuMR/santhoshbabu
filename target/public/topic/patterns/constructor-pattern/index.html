@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <title>Constructor Pattern</title>
+    <!-- css begin-->
+    <link rel="stylesheet" href="/css/render.css">
+    <!-- css end-->
+  </head>
+  <body>
+    <div class="doc-wrap">
+      <!-- begin content-->
+      <div class="container">
+        <nav class="site-navigation">
+          <ul class="flat-list clrft">
+            <li><a href="/">Home</a></li>
+          </ul>
+        </nav>
+        <div class="article-navigator"><span class="prev"><a href="/patterns/categories-of-design-pattern/" title="previous article">Categories Of Design Pattern</a></span><span class="next"><a href="/patterns/module-pattern/" title="previous article">Module Pattern</a></span></div>
+        <section class="page-navigation">
+          <ul class="list">
+            <li><a href="#bmCommonWaysToCreateNewObjects">Common ways to create new objects</a></a></li>
+            <li><a href="#bmCommonWaysToGetSetObjectsProperties">Common ways to get/set object's properties</a></li>
+            <li><a href="#bmConstructors">Constructors</a></li>
+          </ul>
+        </section>
+        <section class="page-content">
+          <h1 class="page-title">Constructor Pattern</h1>
+          <ul class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li><a href="/patterns">Patterns</a></li>
+          </ul>
+          <section class="batch">
+            <article class="group">
+              <h3 id="bmCommonWaysToCreateNewObjects" class="group-title">Common ways to create new objects</h3>
+              <div class="group-content">
+                <h4 class="group-sub-title">Using object literal</h4>
+                <pre>var obj = {};</pre>
+                <h4 class="group-sub-title">Using Object.create</h4>
+                <pre>var obj = Object.create( myObj.prototype );</pre>
+                <h4 class="group-sub-title">Using constructor function</h4>
+                <pre>var obj = new ConstructorFn();</pre>
+              </div>
+            </article>
+            <article class="group">
+              <h3 id="bmCommonWaysToGetSetObjectsProperties" class="group-title">Common ways to get/set object's properties</h3>
+              <div class="group-content">
+                <h4 class="group-sub-title">Dot notation</h4>
+                <ul class="list">
+                  <li>with dot notation, property names must be a valid javascript identifier i.e. can include any combination of alphabets, numbers, special character underscore ("_") and dollar sign ("$") and cannot start with a number.
+                    <pre>var obj = {};
+obj.myProp = "Hello World!";
+var val    = obj.myProp;</pre>
+                  </li>
+                </ul>
+                <h4 class="group-sub-title">Bracket notation</h4>
+                <ul class="list">
+                  <li>with bracket notation, property names must be enclosed in quotes and does not have to be a valid identifier;
+                    <pre>var obj = {};
+obj["myProp"] = "Hello World!";
+var val       = obj["myProp"];</pre>
+                  </li>
+                </ul>
+                <h4 class="group-sub-title">Object.defineProperty</h4>
+                <ul class="list">
+                  <li>helps to create property for objects with configuration option</li>
+                  <pre>var obj = {};
+Object.defineProperty( obj, "myProp", {
+  value: "Hello World!",
+  writable: true,
+  enumerable: true,
+  configurable: true
+});
+var val = obj.myProp; ( or ) var val = obj["myProp"];</pre>
+                </ul>
+                <h4 class="group-sub-title">Object.defineProperties</h4>
+                <ul class="list">
+                  <li>same as Object.defineProperty, but with the ability to create multiple properties in one go</li>
+                  <pre>var obj = {};
+Object.defineProperties( obj, {
+  "myProp01": {
+    value: "Hello World 01!",
+    writable: true,
+    enumerable: true,
+    configurable: true
+  },
+  "myProp02": {
+    value: "Hello World 02!",
+    writable: true,
+    enumerable: true,
+    configurable: false
+  }
+});
+var val01 = obj.myProp01; ( or ) var val01 = obj["myProp01"];
+var val02 = obj.myProp02; ( or ) var val02 = obj["myProp02"];</pre>
+                </ul>
+              </div>
+            </article>
+            <article class="group">
+              <h3 id="bmConstructors" class="group-title">Constructors</h3>
+              <div class="group-content">
+                <div class="group-main">functions called by prefixing <code>new</code> operator act as constructor function in JS.</div>
+                <pre>// constructor function 'Car'
+function Car(model, year) {
+  this.model      = model;
+  this.year       = year;
+  this.toString   = function() {
+    return this.model + " invented in year " + this.year;
+  }
+}
+Car.prototype.classification = "four-wheeler";
+Car.prototype.getModel = function() {
+  return this.model;
+};
+// creating instance of 'Car'
+var civic = new Car('Honda Civic', 2009);
+// call instance's toString method
+console.log( civic.toString() );</pre>
+                <ul class="list">
+                  <li>The instance object has instance properties and prototype properties</li>
+                  <li>Instance properties are those that are attached to 'this'; instance properties are not shared among the object's instances</li>
+                  <li>Prototype properties are those that are attached to the constructor function's 'prototype' chain, making them shared across instances</li>
+                </ul>
+              </div>
+            </article>
+          </section>
+        </section>
+        <div class="article-navigator"><span class="prev"><a href="/patterns/categories-of-design-pattern/" title="previous article">Categories Of Design Pattern</a></span><span class="next"><a href="/patterns/module-pattern/" title="previous article">Module Pattern</a></span></div>
+      </div>
+      <!-- end content-->
+    </div>
+  </body>
+</html>
