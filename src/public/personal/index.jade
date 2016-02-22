@@ -1,0 +1,13 @@
+extends ../template/_default-layout.jade
+
+block title
+  title Personal
+
+block content
+  div.container
+    include ../template/_personal-navigation.jade
+    section.page-content
+      h1.page-heading Personal
+      ul
+        li 
+          a(href="/personal/todo") ToDo   

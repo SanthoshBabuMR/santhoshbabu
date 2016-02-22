@@ -449,6 +449,14 @@ a:focus,
 a:hover {
   text-decoration: underline;
 }
+ul, ol {
+  margin: 0 0 1rem 0;
+  padding: 0 0 0 1.3rem;
+}
+ul li,
+ol li {
+  margin: 0 0 .4rem 0;
+}
 /* end: generic styles */
 
 /* end: doc-wrap */
@@ -471,6 +479,7 @@ a:hover {
 .site-navigation li {
   background: #009bff;
   border-radius: 4px;
+  margin: 0 1rem 0 0;
 }
 .site-navigation a {
   display: inline-block;
@@ -512,12 +521,5 @@ a:hover {
   font-size: 1rem;
   font-weight: 700;
   margin: 0 0 .5rem 0;
-}
-.terminology-content {
-  margin: 0 0 1rem 0;
-  padding: 0 0 0 1.3rem;
-}
-.terminology-content li {
-  margin: 0 0 .2666rem 0;
 }
 /* end: terminology-container */
