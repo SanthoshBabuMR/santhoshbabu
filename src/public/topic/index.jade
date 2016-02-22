@@ -1,0 +1,13 @@
+extends ../template/_default-layout.jade
+
+block title
+  title Index
+
+block content
+  div.container
+    include ../template/_navigation.jade
+    section.page-content
+      h1.page-heading Article(s)
+      ul
+        li
+          a(href="/topic/terminology") Terminology

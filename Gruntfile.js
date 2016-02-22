@@ -8,7 +8,7 @@ module.exports = function(grunt) {
           pretty: true
         },
         files: [ {
-          cwd: "src/public/views",
+          cwd: "src/public",
           src: ["**/*.jade"],
           filter: function(filepath) {
             var lastIndexOfUnderscore   = filepath.lastIndexOf('_');
@@ -16,7 +16,7 @@ module.exports = function(grunt) {
             // alternative way to test for jade partial using regex: return !(/_.*\.jade$/.test(filepath));
             return !( lastIndexOfUnderscore > -1 && lastIndexOfSlash > -1 && ( lastIndexOfSlash < lastIndexOfUnderscore) );
           },
-          dest: "target/public/views",
+          dest: "target/public/",
           expand: true,
           ext: ".html"
         } ]
@@ -41,7 +41,7 @@ module.exports = function(grunt) {
     },
     watch: {
       jade: {
-        files: ['src/public/views/**/*.jade'],
+        files: ['src/public/**/*.jade'],
         tasks: ['jade'],
         options: {
           debounceDelay: 500

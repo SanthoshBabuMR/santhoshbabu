@@ -25,7 +25,6 @@ Server.register(Inert, (err)=> {
   }
 });
 
-// configure routes
 Server.route([
   {
     method: 'GET',
@@ -37,14 +36,11 @@ Server.route([
             filePath = file? URL.parse(file).pathname : undefined,
             fileType = filePath? Path.extname(filePath) : undefined;
         if(!file) {
-          validPathToResource += 'views/index.html';
+          validPathToResource += 'topic/index.html';
         }
         else if(!fileType) {
           file += (file[file.length-1] !== '/')? '/' : '';
-          validPathToResource += 'views/' + file + 'index.html';
-        }
-        else if(fileType.toLowerCase() === '.html') {
-          validPathToResource += 'views/' + file;
+          validPathToResource += file + 'index.html';
         }
         else {
           validPathToResource += file;
