@@ -476,8 +476,7 @@ ol li {
   margin: 0 auto;
   padding: 0 1rem;
 }
-.site-navigation li {
-  background: #009bff;
+.site-navigation li {  
   border-radius: 4px;
   margin: 0 1rem 0 0;
 }
@@ -485,7 +484,7 @@ ol li {
   display: inline-block;
   padding: 5px;
   font-size: 1rem;
-  color: #ffffff;
+  border: 2px solid #009bff;
   letter-spacing: 0.066rem;
 }
 /* end: site-navigation */
@@ -501,7 +500,7 @@ ol li {
   font-weight: 400;
   margin: 0 0 1rem 0;
   padding: 0 0 1rem 0;
-  border-bottom: 1px solid #efefef;
+  border-bottom: 1px solid #eeeeee;
 }
 /* end: page-cotent */
 
