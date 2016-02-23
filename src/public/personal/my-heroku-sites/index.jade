@@ -1,0 +1,17 @@
+extends ../../template/_default-layout.jade
+
+block title
+  title My Heroko Site(s)
+
+block content
+  div.container
+    include ../../template/_personal-navigation.jade
+    section.page-content
+      h1.page-heading My Heroko Site(s)
+      ul
+        li
+          a(href="http://santhoshbabu.herokuapp.com/") santhoshbabu
+        li
+          a(href="http://sb-presentation.herokuapp.com/") my presentations
+        li
+          a(href="http://demo-knockout.herokuapp.com/") demo-knockout
