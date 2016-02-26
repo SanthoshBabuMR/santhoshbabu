@@ -26,7 +26,7 @@ module.exports = function(grunt) {
       main: {
         files: [
           // includes files within path
-          {expand: true, cwd: 'src/public', src: ['css/**/*', 'images/**/*'], dest: 'target/public/'}
+          {expand: true, cwd: 'src/public', src: ['css/**/*', 'images/**/*', 'script/**/*'], dest: 'target/public/'}
         ]
       },
       css: {

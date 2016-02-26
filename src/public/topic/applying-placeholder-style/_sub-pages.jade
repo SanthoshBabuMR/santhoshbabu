@@ -1,0 +1,21 @@
+div.code-block
+  h2.code-block-heading code block: CSS
+  pre
+    code.hljs.css
+      | ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+      |   ...
+      | }
+      | :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      |   ...
+      | }
+      | ::-moz-placeholder { /* Mozilla Firefox 19+ */
+      |    ...
+      | }
+      | :-ms-input-placeholder { /* Internet Explorer 10-11 */
+      |    ...
+      | }
+      | :placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+      |   ...
+      | }
+p
+  | Note that the placeholder style needs to be applied separately for each browser. Otherwise the whole group would be ignored by all browsers.

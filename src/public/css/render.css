@@ -476,7 +476,7 @@ ol li {
   margin: 0 auto;
   padding: 0 1rem;
 }
-.site-navigation li {  
+.site-navigation li {
   border-radius: 4px;
   margin: 0 1rem 0 0;
 }
@@ -522,3 +522,18 @@ ol li {
   margin: 0 0 .5rem 0;
 }
 /* end: terminology-container */
+
+/* begin: code-block */
+.code-block-heading {
+  margin: 0;
+  padding: 5px;
+  font-weight: 400;
+  font-size: 1rem;
+  border-top: 1px solid #1d1f21;
+  border-right: 1px solid #1d1f21;
+  border-left: 1px solid #1d1f21;
+}
+.code-block > pre {
+  margin: 0;
+}
+/* end: code-block */

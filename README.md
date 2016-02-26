@@ -15,7 +15,7 @@
 
 * [grunt]
 * [bootstrap]
-
+* [highlightjs]
 
 ### Download application
 
@@ -73,6 +73,7 @@ grunt front end automation
 
 [grunt]: <http://gruntjs.com/>
 [bootstrap]: <http://getbootstrap.com/>
+[highlightjs]: <https://highlightjs.org/usage/>
 
 [https://github.com/dwyl/learn-hapi]: <https://github.com/dwyl/learn-hapi>
 [http://stackoverflow.com/questions/30469767/how-do-express-and-hapi-compare-to-each-other]: <http://stackoverflow.com/questions/30469767/how-do-express-and-hapi-compare-to-each-other>

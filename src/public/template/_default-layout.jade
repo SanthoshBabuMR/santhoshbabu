@@ -6,12 +6,17 @@ html(lang="en")
     link(rel="icon", type="image/png", href="/images/favicon.png")
     block title
     // css begin
-
     link(rel="stylesheet", href="/css/render.css")
+    link(rel="stylesheet", href="/css/highlightjs/hybrid.css")
+    block css
     // css end
   body
     div(class="doc-wrap")
       // begin content
       block content
       // end content
+
+      script(src="/script/vendor/highlight.pack.js")
+      script
+        | hljs.initHighlightingOnLoad();
       block script
