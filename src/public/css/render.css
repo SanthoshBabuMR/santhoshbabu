@@ -530,6 +530,9 @@ ol li {
 /* end: terminology-container */
 
 /* begin: code-block */
+.code-block {
+  margin-bottom: 1rem;
+}
 .code-block-heading {
   margin: 0;
   padding: 5px;

@@ -1,0 +1,49 @@
+article
+  h2.sub-heading
+    | Undo last git commit
+  div.code-block
+    h2.code-block-heading code block: CLI
+    pre
+      code.hljs.crmsh
+        | git reset --hard HEAD~1
+
+article
+  h2.sub-heading
+    | Generate SSH and add to heroku
+  a(href="https://devcenter.heroku.com/articles/keys#adding-keys-to-heroku") Adding keys to Heroku
+  div.code-block
+    h2.code-block-heading code block: CLI
+    pre
+      code.hljs.crmsh
+        | // open CMD as admin
+        | ---
+        | // login to heroku
+        | heroku login
+        | &lt;type email and password&gt;
+        | ---
+        | // list avaiable keys
+        | heroku keys
+        | ---
+        | // Generate a new SSH key
+        | ssh-keygen -t rsa -C "youremail@abc.com"
+        | ---
+        | // Add it to Heroku
+        | heroku keys:add
+
+article
+  h2.sub-heading
+    | link local repository to your heroku
+  div.code-block
+    h2.code-block-heading code block: CLI
+    pre
+      code.hljs.crmsh
+        | git remote add heroku git@heroku.com:name-of-your-heroku-app.git
+
+article
+  h2.sub-heading
+    | push build to heroku
+  div.code-block
+    h2.code-block-heading code block: CLI
+    pre
+      code.hljs.crmsh
+        | git push heroku master
