@@ -1,11 +1,24 @@
 article
   h2.sub-heading
-    | Undo last git commit
+    | Create new heroku app
+  a(href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction") Getting Started with Node.js on Heroku
   div.code-block
     h2.code-block-heading code block: CLI
     pre
       code.hljs.crmsh
-        | git reset --hard HEAD~1
+        | // login to heroku
+        | heroku login
+        | &lt;type email and password&gt;
+        | ---
+        | // Prepare the app
+        | git clone https://github.com/html5webster/repo-name.git
+        | // navigate to the repo folder
+        | cd repo-name
+        | // Deploy the app
+        | heroku create
+        | ---
+        | // push to heroku
+        | git push heroku master
 
 article
   h2.sub-heading
@@ -32,7 +45,7 @@ article
 
 article
   h2.sub-heading
-    | link local repository to your heroku
+    | link local repository to existing heroku app
   div.code-block
     h2.code-block-heading code block: CLI
     pre
@@ -41,9 +54,30 @@ article
 
 article
   h2.sub-heading
-    | push build to heroku
+    | push BUILD to heroku
   div.code-block
     h2.code-block-heading code block: CLI
     pre
       code.hljs.crmsh
         | git push heroku master
+
+<hr>
+
+article
+  h2.sub-heading
+    | push CODE to github
+  div.code-block
+    h2.code-block-heading code block: CLI
+    pre
+      code.hljs.crmsh
+        | git push origin master
+        | &lt;type email and password&gt;
+
+article
+  h2.sub-heading
+    | Undo last git commit
+  div.code-block
+    h2.code-block-heading code block: CLI
+    pre
+      code.hljs.crmsh
+        | git reset --hard HEAD~1
