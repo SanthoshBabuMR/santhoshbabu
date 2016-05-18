@@ -383,6 +383,40 @@ dl.query-list.border.ordered
 
 dl.query-list.border.ordered
   dt
+    | Undo local changes and reset working directory to most recent commit
+  dd
+    div.demo
+      p
+        | <code class="mark">git reset --hard</code>
+      p
+        | <span class="example">Example #01:</span>
+      div.code-block
+        pre
+          code.hljs.bash
+            | git reset --hard
+      p
+        | Reset staging area and working directory to match most recent commit and overwrites all changes in the working directory.
+        | Use with caution, as this removes all local changes.
+
+dl.query-list.border.ordered
+  dt
+    | Undo last commit, which is yet to be pushed to remote
+  dd
+    div.demo
+      p
+        | <code class="mark">git reset --hard HEAD~1</code>
+      p
+        | <span class="example">Example #01:</span>
+      div.code-block
+        pre
+          code.hljs.bash
+            | git reset --hard HEAD~1
+      p
+        | Use with caution; Only use this, if you've mistakenly committed to local, but yet to be pushed to remote.
+        | 'git reset' will erase 'history', which is bad thing. Alternatively, you can use 'git revert'.
+
+dl.query-list.border.ordered
+  dt
     | List all commits in the current branch
   dd
     div.demo
@@ -502,6 +536,98 @@ dl.query-list.border.ordered
             | git log -n 3 --author="Smith" src/public/css/public.css
       p
         | list last 3 commits where author was "Smith" and the commit includes 'public.css' file
+
+dl.query-list.border.ordered
+  dt
+    | Save currently made changes to stash 
+  dd
+    div.demo
+      p
+        | <code class="mark">git stash</code>
+      p
+        | <span class="example">Example #01:</span>
+      div.code-block
+        pre
+          code.hljs.bash
+            | git stash 
+      p
+        | all local changes will now be stashed and will be available for later, when needed.
+  dd
+    div.demo
+      p
+        | <code class="mark">git stash save &lt;message&gt;</code>
+      p
+        | <span class="example">Example #02:</span>
+      div.code-block
+        pre
+          code.hljs.bash
+            | git stash save "saving ui layout changes for footer"
+      p
+        | all local changes will now be stashed with the provided message.
+
+dl.query-list.border.ordered
+  dt
+    | View stash list
+  dd
+    div.demo
+      p
+        | <code class="mark">git stash list</code>
+      p
+        | <span class="example">Example #01:</span>
+      div.code-block
+        pre
+          code.hljs.bash
+            | git stash list
+      p
+        | display stash list
+
+dl.query-list.border.ordered
+  dt
+    | View stash contents
+  dd
+    div.demo
+      p
+        | <code class="mark">git stash show stash@{&lt;stash_index&gt;}</code>
+      p
+        | <span class="example">Example #01:</span>
+      div.code-block
+        pre
+          code.hljs.bash
+            | git stash show stash@{1}
+      p
+        | view details of stash at index 1.
+
+dl.query-list.border.ordered
+  dt
+    | Apply stashed changes
+  dd
+    div.demo
+      p
+        | <code class="mark">git apply stash@{&lt;stash_index&gt;}</code>
+      p
+        | <span class="example">Example #01:</span>
+      div.code-block
+        pre
+          code.hljs.bash
+            | git apply stash@{1}
+      p
+        | all changes stashed at index 1.
+
+dl.query-list.border.ordered
+  dt
+    | drop a stashed change
+  dd
+    div.demo
+      p
+        | <code class="mark">git stash drop stash@{&lt;stash_index&gt;}</code>
+      p
+        | <span class="example">Example #01:</span>
+      div.code-block
+        pre
+          code.hljs.bash
+            | git stash drop stash@{1}
+      p
+        | drop stash at index 1.
 
 dl.query-list.border.ordered
   dt
