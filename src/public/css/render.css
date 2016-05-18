@@ -457,6 +457,9 @@ ul li,
 ol li {
   margin: 0 0 .4rem 0;
 }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'source_sans_pro_semibold';
+}
 /* end: generic styles */
 
 /* begin: font-face declaration */
@@ -563,7 +566,7 @@ ol li {
 .sub-heading {
   font-size: 1.2rem;
   font-family: 'source_sans_pro_semibold';
-  margin: 0 0 1rem 0;
+  margin: 0 0 .5rem 0;
   padding: 0;
 }
 /* end: page-cotent */
@@ -587,7 +590,7 @@ dl.query-list {
 dl.query-list dt {
   font-size: 1.2rem;
   font-family: 'source_sans_pro_semibold';
-  margin: 0 0 1rem 0;
+  margin: 0 0 .5rem 0;
   padding: 0;
 }
 dl.query-list dd {
@@ -595,6 +598,12 @@ dl.query-list dd {
   padding: 0;
   display: list-item;
   list-style-type: disc;
+}
+dl.border {
+  border-bottom: 1px solid #efefef;
+}
+dl.ordered dd {
+  list-style-type: decimal;
 }
 /* end: query-list */
 
@@ -620,3 +629,17 @@ dl.query-list dd {
   color: #000;
 }
 /* end: code-block */
+
+/* begin: demo */
+.demo .example,
+.demo .syntax {
+  text-decoration: underline;
+}
+.demo .mark {
+  font-family: 'source_sans_pro_extralight';
+  background-color: #dff0d8;
+  /*color: #3c763d;*/
+  border-radius: 2px;
+  padding: 0 3px;
+}
+/* end:; demo */
