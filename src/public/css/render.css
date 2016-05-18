@@ -520,7 +520,7 @@ ol li {
 /* end: doc-wrap */
 .doc-wrap {
   font-size: 1rem;
-  font-family: 'source_sans_pro_extralight', Tahoma, Verdana, Segoe, sans-serif;
+  font-family: 'source_sans_pro_regular', Tahoma, Verdana, Segoe, sans-serif;
 }
 /* end: doc-wrap */
 
@@ -613,9 +613,6 @@ dl.query-list dd {
 }
 .code-block > pre {
   margin: 0;
-}
-.code-block code {
-  font-family: 'source_sans_pro_regular', Tahoma, Verdana, Segoe, sans-serif;
 }
 .code-block code::selection,
 .code-block code span::selection {
