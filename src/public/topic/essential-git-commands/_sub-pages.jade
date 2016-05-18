@@ -400,7 +400,7 @@ dl.query-list.border.ordered
 
 dl.query-list.border.ordered
   dt
-    | Undo last commit, which is yet to be pushed to remote
+    | Undo last commit and reset your working directory state's to prior commit
   dd
     div.demo
       p
@@ -412,7 +412,9 @@ dl.query-list.border.ordered
           code.hljs.bash
             | git reset --hard HEAD~1
       p
-        | Use with caution; Only use this, if you've mistakenly committed to local, but yet to be pushed to remote.
+        | Use with caution; <br />
+        | This will remove the last commit and all the changes that was part of the last commit will be lost.
+        | The working directory will now be set to the prior commit's state.
         | 'git reset' will erase 'history', which is bad thing. Alternatively, you can use 'git revert'.
 
 dl.query-list.border.ordered
