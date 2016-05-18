@@ -459,10 +459,68 @@ ol li {
 }
 /* end: generic styles */
 
+/* begin: font-face declaration */
+@font-face {
+  font-family: 'source_sans_pro_extralight';
+  src: url('/font/sourcesanspro-extralight/sourcesanspro-extralight-webfont.eot');
+  src: url('/font/sourcesanspro-extralight/sourcesanspro-extralight-webfont.eot?#iefix') format('embedded-opentype'),
+       url('/font/sourcesanspro-extralight/sourcesanspro-extralight-webfont.woff2') format('woff2'),
+       url('/font/sourcesanspro-extralight/sourcesanspro-extralight-webfont.woff') format('woff'),
+       url('/font/sourcesanspro-extralight/sourcesanspro-extralight-webfont.ttf') format('truetype'),
+       url('/font/sourcesanspro-extralight/sourcesanspro-extralight-webfont.svg#source_sans_proextralight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'source_sans_pro_light';
+  src: url('/font/sourcesanspro-light/sourcesanspro-light-webfont.eot');
+  src: url('/font/sourcesanspro-light/sourcesanspro-light-webfont.eot?#iefix') format('embedded-opentype'),
+       url('/font/sourcesanspro-light/sourcesanspro-light-webfont.woff2') format('woff2'),
+       url('/font/sourcesanspro-light/sourcesanspro-light-webfont.woff') format('woff'),
+       url('/font/sourcesanspro-light/sourcesanspro-light-webfont.ttf') format('truetype'),
+       url('/font/sourcesanspro-light/sourcesanspro-light-webfont.svg#source_sans_prolight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'source_sans_pro_regular';
+  src: url('/font/sourcesanspro-regular/sourcesanspro-regular-webfont.eot');
+  src: url('/font/sourcesanspro-regular/sourcesanspro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('/font/sourcesanspro-regular/sourcesanspro-regular-webfont.woff2') format('woff2'),
+       url('/font/sourcesanspro-regular/sourcesanspro-regular-webfont.woff') format('woff'),
+       url('/font/sourcesanspro-regular/sourcesanspro-regular-webfont.ttf') format('truetype'),
+       url('/font/sourcesanspro-regular/sourcesanspro-regular-webfont.svg#source_sans_proregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'source_sans_pro_semibold';
+  src: url('/font/sourcesanspro-semibold/sourcesanspro-semibold-webfont.eot');
+  src: url('/font/sourcesanspro-semibold/sourcesanspro-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('/font/sourcesanspro-semibold/sourcesanspro-semibold-webfont.woff2') format('woff2'),
+       url('/font/sourcesanspro-semibold/sourcesanspro-semibold-webfont.woff') format('woff'),
+       url('/font/sourcesanspro-semibold/sourcesanspro-semibold-webfont.ttf') format('truetype'),
+       url('/font/sourcesanspro-semibold/sourcesanspro-semibold-webfont.svg#source_sans_proregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'source_sans_pro_bold';
+  src: url('/font/sourcesanspro-bold/sourcesanspro-bold-webfont.eot');
+  src: url('/font/sourcesanspro-bold/sourcesanspro-bold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('/font/sourcesanspro-bold/sourcesanspro-bold-webfont.woff2') format('woff2'),
+       url('/font/sourcesanspro-bold/sourcesanspro-bold-webfont.woff') format('woff'),
+       url('/font/sourcesanspro-bold/sourcesanspro-bold-webfont.ttf') format('truetype'),
+       url('/font/sourcesanspro-bold/sourcesanspro-bold-webfont.svg#source_sans_proregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* end: font-face declaration */
+
 /* end: doc-wrap */
 .doc-wrap {
   font-size: 1rem;
-  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  font-family: 'source_sans_pro_extralight', Tahoma, Verdana, Segoe, sans-serif;
 }
 /* end: doc-wrap */
 
@@ -484,8 +542,6 @@ ol li {
   display: inline-block;
   padding: 5px;
   font-size: 1rem;
-  border: 2px solid #009bff;
-  letter-spacing: 0.066rem;
 }
 /* end: site-navigation */
 
@@ -497,14 +553,16 @@ ol li {
 }
 .page-heading {
   font-size: 1.6rem;
-  font-weight: 400;
+  font-family: 'source_sans_pro_bold';
+  letter-spacing: .005em;
+  font-weight: normal;
   margin: 0 0 1rem 0;
   padding: 0 0 1rem 0;
   border-bottom: 1px solid #eeeeee;
 }
 .sub-heading {
   font-size: 1.2rem;
-  font-weight: 400;
+  font-family: 'source_sans_pro_semibold';
   margin: 0 0 1rem 0;
   padding: 0;
 }
@@ -521,13 +579,24 @@ ol li {
 }
 /* end: flat-list */
 
-/* begin: terminology-container */
-.terminology-heading {
-  font-size: 1rem;
-  font-weight: 700;
-  margin: 0 0 .5rem 0;
+/* begin: query-list */
+dl.query-list {
+  margin: 0 0 1rem 0;
+  padding: 0;
 }
-/* end: terminology-container */
+dl.query-list dt {
+  font-size: 1.2rem;
+  font-family: 'source_sans_pro_semibold';
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
+dl.query-list dd {
+  margin: 0 0 .4rem 20px;
+  padding: 0;
+  display: list-item;
+  list-style-type: disc;
+}
+/* end: query-list */
 
 /* begin: code-block */
 .code-block {
@@ -544,5 +613,13 @@ ol li {
 }
 .code-block > pre {
   margin: 0;
+}
+.code-block code {
+  font-family: 'source_sans_pro_regular', Tahoma, Verdana, Segoe, sans-serif;
+}
+.code-block code::selection,
+.code-block code span::selection {
+  background-color: #fff;
+  color: #000;
 }
 /* end: code-block */
