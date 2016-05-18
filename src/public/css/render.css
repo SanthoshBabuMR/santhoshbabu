@@ -636,7 +636,7 @@ dl.ordered dd {
   text-decoration: underline;
 }
 .demo .mark {
-  font-family: 'source_sans_pro_extralight';
+  font-family: 'source_sans_pro_light';
   background-color: #dff0d8;
   /*color: #3c763d;*/
   border-radius: 2px;
