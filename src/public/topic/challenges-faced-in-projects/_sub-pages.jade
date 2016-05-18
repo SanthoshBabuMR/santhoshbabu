@@ -1,0 +1,22 @@
+dl.query-list.border
+  dt
+    | JSON data containing quotes(single/double) breaks when stored in DOM ( through form input's value attribute or data-* attribute )
+  dd
+    p
+      | The data had to be stringified and serialized before being stored in DOM; <br />
+      | Likewise, the data had to be de-serialized and parsed when read from DOM and used in js;
+    div.code-block
+        pre
+          code.hljs.javascript
+            | // writing data to DOM
+            | var saveData = { "comment": "This data contains single (') quote and double (\") quote ;" }
+            | $('.page-heading').data('field-data', window.encodeURIComponent(JSON.stringify(saveData)));
+            | // reading data to DOM
+            | var retrieveData = JSON.parse(window.decodeURIComponent($('.page-heading').data('field-data')));
+
+dl.query-list.border
+  dt
+    | Execution order of setTimeout can be confusing
+  dd
+    p
+      | Use callbacks as an alternative to setTimeout
