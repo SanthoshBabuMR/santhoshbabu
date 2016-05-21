@@ -1,0 +1,110 @@
+dl.query-list.border
+  dt
+    | JSON data containing quotes(single/double) breaks when stored in DOM ( through form input's value attribute or data-* attribute )
+  dd
+    p
+      | The data had to be stringified and serialized before being stored in DOM; <br />
+      | Likewise, the data had to be de-serialized and parsed when read from DOM and used in js;
+    div.code-block
+        pre
+          code.hljs.javascript
+            | // writing data to DOM
+            | var saveData = { "comment": "This data contains single (') quote and double (\") quote ;" }
+            | $('body').data('field-data', window.encodeURIComponent(JSON.stringify(saveData)));
+            | // reading data to DOM
+            | var retrieveData = JSON.parse(window.decodeURIComponent($('body').data('field-data')));
+
+dl.query-list.border
+  dt
+    | Execution order of setTimeout can be confusing
+  dd
+    p
+      | Use callbacks as an alternative to setTimeout
+
+dl.query-list.border
+  dt
+    | Setting default value
+  dd
+    p
+      | I used to follow the below two approaches, to set a default value, if one is not provided
+    div.code-block
+      h2.code-block-heading code block: Using ternary operator
+      pre
+        code.hljs.javascript
+          | function setData (name, rating) {
+          |   var person = name   ? name   : '&lt;some-default-value&gt;';
+          |   var rating = rating ? rating : '&lt;some-default-value&gt;';
+          |   return {
+          |     person: person,
+          |     rating: rating
+          |   };
+          | }
+          | // setData();
+          | // setData('Banana', 6);
+          | // setData('Snacks', 0);
+          | // setData('', 4);
+    div.code-block
+      h2.code-block-heading code block: Using OR operator
+      pre
+        code.hljs.javascript
+          | function setData (name, rating) {
+          |   var person = name   || '&lt;some-default-value&gt;';
+          |   var rating = rating || '&lt;some-default-value&gt;';
+          |   return {
+          |     person: person,
+          |     rating: rating
+          |   };
+          | }
+          | // setData();
+          | // setData('Banana', 6);
+          | // setData('Snacks', 0);
+          | // setData('', 4);
+    p
+      | However, with javascript the following are considered falsy:
+    ul
+      li
+        | 0 (zero)
+      li
+        | "" (empty string)
+      li
+        | null.
+      li
+        | undefined.
+      li
+        | NaN (a special Number value meaning Not-a-Number!)
+    p
+      | Which implies. if the actual value provided is 'zero' (0) or an empty string (''), the default value will be set instead of the actual value.
+    p
+      | A better approach would be to check if the variable in question has any value; This can be achieved by using typeof operator (or) by checking the variable against 'undefined' value.
+    div.code-block
+      h2.code-block-heading code block: Using typeof operator
+      pre
+        code.hljs.javascript
+          | function setData (name, rating) {
+          |   var person = typeof name   !== "undefined" ? name   : '&lt;some-default-value&gt;';
+          |   var rating = typeof rating !== "undefined" ? rating : '&lt;some-default-value&gt;';
+          |   return {
+          |     person: person,
+          |     rating: rating
+          |   };
+          | }
+          | // setData();
+          | // setData('Banana', 6);
+          | // setData('Snacks', 0);
+          | // setData('', 4);
+    div.code-block
+      h2.code-block-heading code block: Checking against 'undefined'
+      pre
+        code.hljs.javascript
+          | function setData (name, rating) {
+          |   var person = name   !== undefined ? name   : '&lt;some-default-value&gt;';
+          |   var rating = rating !== undefined ? rating : '&lt;some-default-value&gt;';
+          |   return {
+          |     person: person,
+          |     rating: rating
+          |   };
+          | }
+          | // setData();
+          | // setData('Banana', 6);
+          | // setData('Snacks', 0);
+          | // setData('', 4);
