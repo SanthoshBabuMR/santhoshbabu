@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <title>Build and deployment</title>
+    <!-- css begin-->
+    <link rel="stylesheet" href="/css/render.css">
+    <link rel="stylesheet" href="/css/highlightjs/monokai-sublime.css">
+    <!-- css end-->
+  </head>
+  <body>
+    <div class="doc-wrap">
+      <!-- begin content-->
+      <div class="container">
+        <nav class="site-navigation">
+          <ul class="flat-list clrft">
+            <li><a href="/personal">Personal Home</a></li>
+            <li><a href="/topic">Site Home</a></li>
+          </ul>
+        </nav>
+        <section class="page-content">
+          <h1 class="page-heading">Build and deployment</h1>
+          <article>
+            <h2 class="sub-heading">Create new heroku app</h2><a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction">Getting Started with Node.js on Heroku</a>
+            <div class="code-block">
+              <h2 class="code-block-heading">code block: CLI</h2>
+              <pre><code class="hljs crmsh">// login to heroku
+heroku login
+&lt;type email and password&gt;
+---
+// Prepare the app
+git clone https://github.com/html5webster/repo-name.git
+// navigate to the repo folder
+cd repo-name
+// Deploy the app
+heroku create
+---
+// push to heroku
+git push heroku master</code></pre>
+            </div>
+          </article>
+          <article>
+            <h2 class="sub-heading">Generate SSH and add to heroku</h2><a href="https://devcenter.heroku.com/articles/keys#adding-keys-to-heroku">Adding keys to Heroku</a>
+            <div class="code-block">
+              <h2 class="code-block-heading">code block: CLI</h2>
+              <pre><code class="hljs crmsh">// open CMD as admin
+---
+// login to heroku
+heroku login
+&lt;type email and password&gt;
+---
+// list avaiable keys
+heroku keys
+---
+// Generate a new SSH key
+ssh-keygen -t rsa -C "youremail@abc.com"
+---
+// Add it to Heroku
+heroku keys:add</code></pre>
+            </div>
+          </article>
+          <article>
+            <h2 class="sub-heading">link local repository to existing heroku app</h2>
+            <div class="code-block">
+              <h2 class="code-block-heading">code block: CLI</h2>
+              <pre><code class="hljs crmsh">git remote add heroku git@heroku.com:name-of-your-heroku-app.git</code></pre>
+            </div>
+          </article>
+          <article>
+            <h2 class="sub-heading">push BUILD to heroku</h2>
+            <div class="code-block">
+              <h2 class="code-block-heading">code block: CLI</h2>
+              <pre><code class="hljs crmsh">git push heroku master</code></pre>
+            </div>
+          </article><hr>
+          <article>
+            <h2 class="sub-heading">push CODE to github</h2>
+            <div class="code-block">
+              <h2 class="code-block-heading">code block: CLI</h2>
+              <pre><code class="hljs crmsh">git push origin master
+&lt;type email and password&gt;</code></pre>
+            </div>
+          </article>
+          <article>
+            <h2 class="sub-heading">Undo last git commit</h2>
+            <div class="code-block">
+              <h2 class="code-block-heading">code block: CLI</h2>
+              <pre><code class="hljs crmsh">git reset --hard HEAD~1</code></pre>
+            </div>
+          </article>
+        </section>
+      </div>
+      <!-- end content-->
+      <script src="/script/vendor/highlight.pack.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+    </div>
+  </body>
+</html>
