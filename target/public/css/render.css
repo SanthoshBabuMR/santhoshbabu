@@ -596,8 +596,16 @@ dl.query-list dt {
 dl.query-list dd {
   margin: 0 0 .4rem 20px;
   padding: 0;
-  display: list-item;
-  list-style-type: disc;
+  /*display: list-item;
+  list-style-type: disc;*/
+}
+dl.query-list dd:before {
+  content: '\2609';
+  display: inline-block;
+  color: #009bff;
+  font-size: 1.2rem ;
+  float: left;
+  margin: -3px 0 0 -20px;
 }
 dl.border {
   border-bottom: 1px solid #efefef;
@@ -619,6 +627,8 @@ dl.ordered dd {
   border-top: 1px solid #1d1f21;
   border-right: 1px solid #1d1f21;
   border-left: 1px solid #1d1f21;
+  background: #29535A;
+  color: #fff;
 }
 .code-block > pre {
   margin: 0;
@@ -636,10 +646,13 @@ dl.ordered dd {
   text-decoration: underline;
 }
 .demo .mark {
-  font-family: 'source_sans_pro_light';
+  display: inline-block;
+  font-family: 'source_sans_pro_semibold';
+  letter-spacing: 0.04rem;
   background-color: #dff0d8;
   /*color: #3c763d;*/
   border-radius: 2px;
   padding: 0 3px;
+  margin-bottom: 1px;
 }
 /* end:; demo */
