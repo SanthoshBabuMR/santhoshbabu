@@ -10,9 +10,9 @@ dl.query-list.border
           code.hljs.javascript
             | // writing data to DOM
             | var saveData = { "comment": "This data contains single (') quote and double (\") quote ;" }
-            | $('.page-heading').data('field-data', window.encodeURIComponent(JSON.stringify(saveData)));
+            | $('body').data('field-data', window.encodeURIComponent(JSON.stringify(saveData)));
             | // reading data to DOM
-            | var retrieveData = JSON.parse(window.decodeURIComponent($('.page-heading').data('field-data')));
+            | var retrieveData = JSON.parse(window.decodeURIComponent($('body').data('field-data')));
 
 dl.query-list.border
   dt
