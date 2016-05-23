@@ -1,0 +1,128 @@
+
+<article>
+  <h2>Sample</h2>
+  <ul>
+    <li>Sample</li>
+  </ul>
+</article>
+<article>
+  <h2>Data type</h2>
+  <ul>
+    <li>All values in javaScript are either primitives or objects.</li>
+    <li>Primitive includes <code>string</code>, <code>number</code>, <code>boolean</code>, <code>undefined</code>, <code>null</code> and <code>symbol</code></li>
+    <li>Any non-primtive value expect <code>null</code> is an <code>object</code></li>
+    <li>Please not a <code>value</code> is immutable while a <code>variable</code> is not. A <code>variable</code> holds a reference to their (primitive) value.</li>
+    <li><a href="/data-type">more on data type</a></li>
+  </ul>
+</article>
+<article>
+  <h2>typeof</h2>
+  <ul>
+    <li>All values in javaScript are either primitives or objects. <code>typeof</code> operator returns the type of value</li>
+    <li>For primitive value, returns the value type</li>
+    <li>For any non-primtive value expect <code>null</code>, <code>typeof</code> returns value type as <code>object</code>;</li>
+    <li>Example:
+      <pre>typeof "foo";            // "string"
+typeof true;             // "boolean"
+typeof -1262;            // "number"
+typeof function fn(){};  // "function"
+typeof undefined;        // "undefined"</pre>
+      <pre>typeof {};      // "object"
+typeof [];      // "object"
+typeof null;    // "object"</pre>
+    </li>
+  </ul>
+</article>
+<article>
+  <h2>Evalution to <code>true</code></h2>
+  <ul>
+    <li>All values are truthful, except the following
+      <ol>
+        <li><code>""</code></li>
+        <li><code>0</code></li>
+        <li><code>false</code></li>
+        <li><code>null</code></li>
+        <li><code>undefined</code></li>
+        <li><code>NaN</code></li>
+      </ol>
+    </li>
+  </ul>
+</article>
+<article>
+  <h2>undefined</h2>
+  <ul>
+    <li>represents "no value"
+      <ol>
+        <li>Uninitialized variables are <code>undefined</code>
+          <pre>var foo;
+console.log(foo); // undefined</pre>
+        </li>
+        <li>Missing params in functions are <code>undefined</code>
+          <pre>function fn(x) {
+  return x;
+}
+fn(); // undefined</pre>
+        </li>
+        <li>Reading a non existent property in an object returns <code>undefined</code>
+          <pre>var obj = {};
+console.log( obj.name ); // undefined</pre>
+        </li>
+      </ol>
+    </li>
+  </ul>
+</article>
+<article>
+  <h2>Dynamic typing</h2>
+  <ul>
+    <li>A variable in javascript can be assigned with different data types.
+      <pre>var foo = "bar";    // foo holds string data type
+    foo = false;    // foo holds boolean data type
+    foo = [1,2,3];  // foo holds object data type</pre>
+    </li>
+  </ul>
+</article>
+<article>
+  <h2>Reserved words</h2>
+  <ul>
+    <li>arguments, break, case, catch, class, const, continue, debugger, default, delete, do, else, enum, export, extends, false, finally, for, function, if, implements, import, in, instanceof, interface, let, new, null, package, private, protected, public, return, static, super, switch, this, throw, true, try, typeof, var, void, while</li>
+  </ul>
+</article>
+<article>
+  <h2>Comments</h2>
+  <ul>
+    <li>Single-line comments starts with <code>//</code>
+      <pre>var x = 18; // This is an assignment;</pre>
+    </li>
+    <li>Multiline comments are delimited by <code>/*</code> and <code>*/</code>
+      <pre>/*
+  The following function
+  is an anonymous self-executing
+  function
+*/
+(function() {
+  ...
+})();</pre>
+    </li>
+  </ul>
+</article>
+<article>
+  <h2>ECMAScript</h2>
+  <ul>
+    <li>ECMAScript is a scripting-language specification standardized by ECMA International</li>
+    <li>JavaScript is an implementation of ECMAScript</li>
+    <li>ECMA stands for "European Computer Manufacturers Association"</li>
+  </ul>
+</article>
+<article>
+  <h2>Brendan Eich</h2>
+  <ul>
+    <li>Created JavaScript in May 1995 at Netscape Communications Corporation</li>
+  </ul>
+</article>
+<article>
+  <h2>JavaScript</h2>
+  <ul>
+    <li>JavaScript is a high-level, dynamic, and interpreted programming language, based on ECMAScript specification.</li>
+    <li>also known as Mocha or LiveScript or JScript or ECMAScript</li>
+  </ul>
+</article>
