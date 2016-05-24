@@ -1,0 +1,48 @@
+ul
+  li
+    | Launch terminal
+  li
+    | Go to home directory by typing 
+    div.code-block
+      pre
+        code.hljs.bash
+          | cd
+  li
+    | Check if '.bash_profile' file exists in home directory,
+    div.code-block
+      pre
+        code.hljs.bash
+          | ls -la
+  li
+    | If not available, create it using,
+    div.code-block
+      pre
+        code.hljs.bash
+          | touch .bash_profile
+  li
+    | Open file in text edit to add alias,
+    div.code-block
+      pre
+        code.hljs.bash
+          | open .bash_profile
+  li
+    | Add an alias 
+    div.code-block
+      pre
+        code.hljs.bash
+          | alias documents='cd "/Users/babusa/Documents/" && pwd'
+  li
+    | To add other aliases just start a new line,  and apply the same formatting.
+    div.code-block
+      pre
+        code.hljs.bash
+          | alias documents='cd "/Users/babusa/Documents/" && pwd'
+          | alias downloads='cd "/Users/babusa/Downloads/" && pwd'
+  li
+    | save and close text edit
+  li
+    | Refresh the bash shell environment:
+    div.code-block
+      pre
+        code.hljs.bash
+          | source ~/.bash_profile
