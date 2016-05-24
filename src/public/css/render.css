@@ -462,6 +462,38 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* end: generic styles */
 
+/* begin: table */
+table {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+table caption {
+  text-align: left;
+  font-weight: 700;
+  border-bottom: 2px solid #bbb;
+  padding: 5px 10px;
+}
+table th,
+table td {
+  padding: 5px 10px;
+  vertical-align: top;
+}
+table tr:hover {
+  background-color: #eaeaea;
+}
+table.striped tr {
+  border-bottom: 1px solid #ccc;
+}
+table.col-1 th,
+table.col-1 td {
+  width: 100%;
+}
+table.col-2 th,
+table.col-2 td {
+  width: 50%;
+}
+/* end: table */
+
 /* begin: font-face declaration */
 @font-face {
   font-family: 'source_sans_pro_extralight';
