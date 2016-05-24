@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <title>Make alias in bash shall in OS X terminal</title>
+    <!-- css begin-->
+    <link rel="stylesheet" href="/css/render.css">
+    <link rel="stylesheet" href="/css/highlightjs/monokai-sublime.css">
+    <!-- css end-->
+  </head>
+  <body>
+    <div class="doc-wrap">
+      <!-- begin content-->
+      <div class="container">
+        <nav class="site-navigation">
+          <ul class="flat-list clrft">
+            <li><a href="/">Home</a></li>
+          </ul>
+        </nav>
+        <section class="page-content">
+          <h1 class="page-heading">Make alias in bash shall in OS X terminal</h1>
+          <ul>
+            <li>Launch terminal</li>
+            <li>Go to home directory by typing 
+              <div class="code-block">
+                <pre><code class="hljs bash">cd</code></pre>
+              </div>
+            </li>
+            <li>Check if '.bash_profile' file exists in home directory,
+              <div class="code-block">
+                <pre><code class="hljs bash">ls -la</code></pre>
+              </div>
+            </li>
+            <li>If not available, create it using,
+              <div class="code-block">
+                <pre><code class="hljs bash">touch .bash_profile</code></pre>
+              </div>
+            </li>
+            <li>Open file in text edit to add alias,
+              <div class="code-block">
+                <pre><code class="hljs bash">open .bash_profile             // if default editor is text edit
+open -a TextEdit .bash_profile // if default editor is other than text edit</code></pre>
+              </div>
+            </li>
+            <li>Add an alias 
+              <div class="code-block">
+                <pre><code class="hljs bash">alias documents='cd "/Users/babusa/Documents/" && pwd'</code></pre>
+              </div>
+            </li>
+            <li>To add other aliases just start a new line,  and apply the same formatting.
+              <div class="code-block">
+                <pre><code class="hljs bash">alias documents='cd "/Users/babusa/Documents/" && pwd'
+alias downloads='cd "/Users/babusa/Downloads/" && pwd'</code></pre>
+              </div>
+            </li>
+            <li>save and close text edit</li>
+            <li>Refresh the bash shell environment:
+              <div class="code-block">
+                <pre><code class="hljs bash">source ~/.bash_profile</code></pre>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <!-- end content-->
+      <script src="/script/vendor/highlight.pack.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+    </div>
+  </body>
+</html>
