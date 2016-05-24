@@ -10,7 +10,7 @@ table.col-2.striped
 
 table.col-2.striped
   caption
-    | View/Switch/Create/Delete branch
+    | View/Switch/Create/Delete/Merge branch
   tr
     td
       | View branch
@@ -41,6 +41,12 @@ table.col-2.striped
     td
       code
         | git checkout -d &lt;existing_branch_name&gt;
+  tr
+    td
+      | Merge branch
+    td
+      code
+        | git merge &lt;target_branch&gt;
   tr
     td
       | Unable to see a newly created remote branch?
