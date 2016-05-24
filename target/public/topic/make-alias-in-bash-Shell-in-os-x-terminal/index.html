@@ -21,9 +21,9 @@
         </nav>
         <section class="page-content">
           <h1 class="page-heading">Make alias in bash shall in OS X terminal</h1>
-          <ul>
+          <ol>
             <li>Launch terminal</li>
-            <li>Go to home directory by typing 
+            <li>Go to home directory by typing,
               <div class="code-block">
                 <pre><code class="hljs bash">cd</code></pre>
               </div>
@@ -40,8 +40,11 @@
             </li>
             <li>Open file in text edit to add alias,
               <div class="code-block">
-                <pre><code class="hljs bash">open .bash_profile             // if default editor is text edit
-open -a TextEdit .bash_profile // if default editor is other than text edit</code></pre>
+                <pre><code class="hljs bash"># default editor is text edit
+open .bash_profile 
+&nbsp;
+# default editor is other than text edit
+open -a TextEdit .bash_profile </code></pre>
               </div>
             </li>
             <li>Add an alias 
@@ -61,7 +64,7 @@ alias downloads='cd "/Users/&lt;user_name&gt;/Downloads/" && pwd'</code></pre>
                 <pre><code class="hljs bash">source ~/.bash_profile</code></pre>
               </div>
             </li>
-          </ul>
+          </ol>
         </section>
       </div>
       <!-- end content-->
