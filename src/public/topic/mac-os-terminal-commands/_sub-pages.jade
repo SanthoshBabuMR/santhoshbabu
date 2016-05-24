@@ -16,8 +16,11 @@ ul
     div.code-block
       pre
         code.hljs.bash
-          | open &lt;file_name&gt;             // if default editor is text edit
-          | open -a TextEdit &lt;file_name&gt; // if default editor is other than text edit
+          | # default editor is text edit
+          | open &lt;file_name&gt;
+          | &nbsp;
+          | # default editor is other than text edit
+          | open -a TextEdit &lt;file_name&gt;
   li
     | List hidden files
     div.code-block
