@@ -24,7 +24,8 @@ ul
     div.code-block
       pre
         code.hljs.bash
-          | open .bash_profile
+          | open .bash_profile             // if default editor is text edit
+          | open -a TextEdit .bash_profile // if default editor is other than text edit
   li
     | Add an alias 
     div.code-block
