@@ -130,7 +130,7 @@ table.col-2.striped
   
 table.col-2.striped
   caption
-    | Undo
+    | Unstage/Delete/Discard
   tr
     td
       | Unstage a file
@@ -149,6 +149,31 @@ table.col-2.striped
     td
       code
         | git reset
+  tr
+    td
+      | Delete a file from repo and working directory
+    td
+      code
+        | git rm &lt;file&gt;
+  tr
+    td
+      | Delete a file only from repo
+    td
+      code
+        | git rm --cached &lt;file&gt;
+  tr
+    td
+      | Delete a folder from repo and working directory
+    td
+      code
+        | git rm -r &lt;folder&gt;
+  tr
+    td
+      | Delete a folder only from repo
+    td
+      code
+        | git rm -r --cached &lt;folder&gt;
+            
   tr
     td
       | Discard all local changes and unstage all files
