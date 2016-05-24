@@ -1,12 +1,28 @@
 table.col-2.striped
   caption
+    | Initialize a repo
+  tr
+    td
+      | Create a new local GIT repo
+    td
+      code
+        | git init
+
+table.col-2.striped
+  caption
     | Cloning a repo
   tr
     td
       | Clone a repo
     td
       code
-        | git clone &lt;repo&gt;
+        | git clone &lt;remote_repo_url&gt;
+  tr
+    td
+      | Clone a repo with specific folder name
+    td
+      code
+        | git clone &lt;remote_repo_url&gt; &lt;folder_name&gt;
 
 table.col-2.striped
   caption
@@ -19,6 +35,12 @@ table.col-2.striped
         | git branch
   tr
     td
+      | View only remote branches
+    td
+      code
+        | git branch -r
+  tr
+    td
       | View all branches (local &amp; remote)
     td
       code
@@ -29,6 +51,12 @@ table.col-2.striped
     td
       code
         | git checkout &lt;existing_branch_name&gt;
+  tr
+    td
+      | Create a new branch
+    td
+      code
+        | git branch &lt;new_branch_name&gt;
   tr
     td
       | Create and switch to a new branch
@@ -91,6 +119,14 @@ table.col-2.striped
     td
       code
         | git commit -m "&lt;commit_message&gt;"
+  tr
+    td
+      | Change commit messages 
+      | <br />
+      | ( only if, changes are yet to be pushed to origin )
+    td
+      code
+        | git commit --amend -m "&lt;new_commit_message*gt;"
   
 table.col-2.striped
   caption
@@ -103,18 +139,32 @@ table.col-2.striped
         | git reset &lt;file&gt;
   tr
     td
+      | Unstage all files within a folder
+    td
+      code
+        | git reset &lt;folder&gt;
+  tr
+    td
       | Unstage all files
     td
       code
         | git reset
   tr
     td
-      | Discard all local changes and reset staging area 
+      | Discard all local changes and unstage all files
       | <br />
       | ( local changes will be lost permanently; use with caution )
     td
       code
         | git reset --hard
+  tr
+    td
+      | Discard last commit; Discard all local changes and unstage all files
+      | <br />
+      | ( 'git reset' will erase 'history'; use with caution )
+    td
+      code
+        | git reset --hard HEAD~1
 
 table.col-2.striped
   caption
@@ -137,6 +187,12 @@ table.col-2.striped
     td
       code
         | git push
+  tr
+    td
+      | Push local *branch* to repo
+    td
+      code
+        | git push -u origin &lt;local_branch_name&gt;
   tr
     td
       | Force push local changes to repo
@@ -184,6 +240,18 @@ table.col-2.striped
         | git log -5
   tr
     td
+      | View file stats (added/deleted/modified)
+    td
+      code
+        | git log --stat
+  tr
+    td
+      | View the full diff of each commit.
+    td
+      code
+        | git log -p
+  tr
+    td
       | View last 5 commit history in condensed format
     td
       code
@@ -199,23 +267,17 @@ table.col-2.striped
       | View last 5 commit by specific author
     td
       code
-        | git log -5 --oneline --author="Smith"
+        | git log -5 --oneline --author="&lt;name&gt;"
+  tr
+    td
+      | View last 5 commit by specific message pattern
+    td
+      code
+        | git log -5 --oneline --grep="&lt;pattern&gt;"
 
 table.col-2.striped
   caption
     | Configure user name and email
-  tr
-    td
-      | Configure user name in the current repo
-    td
-      code
-        | git config user.name "&lt;name&gt;"
-  tr
-    td
-      | Configure user email in the current repo
-    td
-      code
-        | git config user.email "&lt;email&gt;"
   tr
     td
       | Configure user name globally
@@ -224,8 +286,178 @@ table.col-2.striped
         | git config --global user.name "&lt;name&gt;"
   tr
     td
+      | Configure user name in the current repo
+    td
+      code
+        | git config user.name "&lt;name&gt;"
+  tr
+    td
       | Configure user email globally
     td
       code
         | git config --global user.email "&lt;email&gt;"
+  tr
+    td
+      | Configure user email in the current repo
+    td
+      code
+        | git config user.email "&lt;email&gt;"
+
+table.col-2.striped
+  caption
+    | View/Edit git configuration file
+  tr
+    td
+      | View configuration file
+    td
+      code
+        | git config --system --list
+        | <br />
+        | git config --global --list
+        | <br />
+        | git config --local --list
+  tr
+    td
+      | Open the configuration file for manual editing
+    td
+      code
+        | git config --system --edit
+        | <br />
+        | git config --global --edit
+        | <br />
+        | git config --local --edit
+
+table.col-2.striped
+  caption
+    | View/Add remote
+  tr
+    td
+      | View remote
+    td
+      code
+        | git remote -v
+  tr
+    td
+      | Add remote origin
+    td
+      code
+        | git remote add origin &lt;remote_repo_url&gt;
+
+article
+  h2.sub-heading
+    | GIT Notes
+  dl.query-list.border.ordered
+    dt
+      | HEAD
+    dd
+      | HEAD pointer is the reference to the last commit
+  dl.query-list.border.ordered
+    dt
+      | Working Directory
+    dd
+      | A folder that contains an initialized Git repository
+  dl.query-list.border.ordered
+    dt
+      | Tracked files
+    dd
+      | Existing file(s) in the working directory are tracked files.
+  dl.query-list.border.ordered
+    dt
+      | Untracked files
+    dd
+      | New file(s) in the working directory are files with untracked status
+  dl.query-list.border.ordered
+    dt
+      | Unmodified files
+    dd
+      | New file(s) added to the staging area are unmodified files
+  dl.query-list.border.ordered
+    dt
+      | Modified files
+    dd
+      | Existing file(s) that are modified in the working directory, are file(s) with modified status.
+      | <br />
+      | Also, When a file moved to staging area and is later modified, the file is in modified status
+  dl.query-list.border.ordered
+    dt
+      | .gitignore
+    dd
+      | contains files/folders that needs to be ignored during commit
+  dl.query-list.border.ordered
+    dt
+      | git configuration ( System level )
+    dd
+      p
+        | The system level contains system-wide configurations; if you edit the configuration at this level, every user and its repository will be affected.
+        | <br />
+        | This configuration is stored in the gitconfig file usually located in:
+      ul
+        li
+          | Windows - C:\Program Files (x86)\Git\etc\gitconfig
+        li
+          | Linux - /etc/gitconfig
+        li
+          | Mac OS X - /usr/local/git/etc/gitconfig
+      p
+        | To edit the parameters at this level, you have to use the --system option;
+
+  dl.query-list.border.ordered
+    dt
+      | git configuration ( Global level )
+    dd
+      p
+        | The global level contains user-wide configurations; if you edit the configuration at this level, every user's repository will be affected.
+        | <br />
+        | This configuration is stored in the .gitconfig file usually located in:
+      ul
+        li
+          | Windows - C:\Users\<UserName>\.gitconfig
+        li
+          | Linux - ~/.gitconfig
+        li
+          | Mac OS X - ~/.gitconfig
+      p
+        | To edit the parameters at this level, you have to use the --global option.
   
+  dl.query-list.border.ordered
+    dt
+      | git configuration ( Repository level )
+    dd
+      p
+        | The repository level contains repository only configurations; if you edit the configuration at this level, only the repository in use will be affected.
+        | <br />
+        | This configuration is stored in the config file located in the .git repository subfolder:
+      ul
+        li
+          | Windows - C:\<MyRepoFolder>\.git\config
+        li
+          | Linux - ~/<MyRepoFolder>/.git/config
+        li
+          | Mac OS X - ~/<MyRepoFolder>/.git/config
+      p
+        | To edit parameters at this level, you can use the --local
+
+article
+  h2.sub-heading
+    | References
+  ul
+    li
+      a(href="https://www.packtpub.com/application-development/git-essentials") Git Essentials by Ferdinando Santacroce
+    li
+      a(href="https://www.atlassian.com/dms/wac/images/landing/git/atlassian_git_cheatsheet.pdf") Git Cheat Sheet - Atlassian
+    li
+      a(href="http://learngitbranching.js.org/") Learn Git Branching
+    li
+      a(href="http://nvie.com/posts/a-successful-git-branching-model/") A successful Git branching model
+    li
+      a(href="https://www.atlassian.com/git/tutorials/setting-up-a-repository") Setting up a repository
+    li
+      a(href="http://stackoverflow.com/questions/2257196/git-pull-from-other-branch") Git: Pull from other branch
+    li
+      a(href="http://stackoverflow.com/questions/3639342/whats-the-difference-between-git-reset-and-git-checkout") What's the difference between "git reset" and "git checkout"?
+    li
+      a(href="https://arialdomartini.wordpress.com/2012/09/03/pre-emptive-commit-comments/") Preemptive commit comments
+    li
+      a(href="http://www.commitlogsfromlastnight.com/") Commit Logs From Last Night
+    li
+      a(href="http://www.gitminutes.com/") Git Minutes
