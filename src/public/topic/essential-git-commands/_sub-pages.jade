@@ -130,19 +130,21 @@ table.col-2.striped
   
 table.col-2.striped
   caption
-    | Unstage/Delete/Discard
+    | Undo/Unstage/Delete/Discard
   tr
     td
-      | Unstage a file
+      | Undo local changes
+      | <br />
+      | ( local changes will be lost permanently; use with caution )
     td
       code
-        | git reset &lt;file&gt;
+        | git checkout -- &lt;file-or-folder&gt;
   tr
     td
-      | Unstage all files within a folder
+      | Unstage file
     td
       code
-        | git reset &lt;folder&gt;
+        | git reset &lt;file-or-folder&gt;
   tr
     td
       | Unstage all files
@@ -154,26 +156,13 @@ table.col-2.striped
       | Delete a file from repo and working directory
     td
       code
-        | git rm &lt;file&gt;
+        | git rm &lt;file-or-folder&gt;
   tr
     td
       | Delete a file only from repo
     td
       code
-        | git rm --cached &lt;file&gt;
-  tr
-    td
-      | Delete a folder from repo and working directory
-    td
-      code
-        | git rm -r &lt;folder&gt;
-  tr
-    td
-      | Delete a folder only from repo
-    td
-      code
-        | git rm -r --cached &lt;folder&gt;
-            
+        | git rm --cached &lt;file-or-folder&gt;    
   tr
     td
       | Discard all local changes and unstage all files
