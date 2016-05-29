@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <title>GIT notes</title>
+    <!-- css begin-->
+    <link rel="stylesheet" href="/css/render.css">
+    <link rel="stylesheet" href="/css/highlightjs/monokai-sublime.css">
+    <!-- css end-->
+  </head>
+  <body>
+    <div class="doc-wrap">
+      <!-- begin content-->
+      <div class="container">
+        <nav class="site-navigation">
+          <ul class="flat-list clrft">
+            <li><a href="/">Home</a></li>
+          </ul>
+        </nav>
+        <section class="page-content">
+          <h1 class="page-heading">GIT notes</h1>
+          <article>
+            <h2 class="sub-heading">Terminology</h2>
+            <dl class="query-list border ordered">
+              <dt>HEAD</dt>
+              <dd>HEAD pointer is the reference to the last commit</dd>
+            </dl>
+            <dl class="query-list border ordered">
+              <dt>Working Directory</dt>
+              <dd>A folder that contains an initialized Git repository</dd>
+            </dl>
+            <dl class="query-list border ordered">
+              <dt>Tracked files</dt>
+              <dd>Existing file(s) in the working directory are tracked files.</dd>
+            </dl>
+            <dl class="query-list border ordered">
+              <dt>Untracked files</dt>
+              <dd>New file(s) in the working directory are files with untracked status</dd>
+            </dl>
+            <dl class="query-list border ordered">
+              <dt>Unmodified files</dt>
+              <dd>New file(s) added to the staging area are unmodified files</dd>
+            </dl>
+            <dl class="query-list border ordered">
+              <dt>Modified files</dt>
+              <dd>
+                Existing file(s) that are modified in the working directory, are file(s) with modified status.
+                <br />
+                Also, When a file moved to staging area and is later modified, the file is in modified status
+              </dd>
+            </dl>
+            <dl class="query-list border ordered">
+              <dt>.gitignore</dt>
+              <dd>contains files/folders that needs to be ignored during commit</dd>
+            </dl>
+            <dl class="query-list border ordered">
+              <dt>git configuration ( System level )</dt>
+              <dd>
+                <p>
+                  The system level contains system-wide configurations; if you edit the configuration at this level, every user and its repository will be affected.
+                  <br />
+                  This configuration is stored in the gitconfig file usually located in:
+                </p>
+                <ul>
+                  <li>Windows - C:\Program Files (x86)\Git\etc\gitconfig</li>
+                  <li>Linux - /etc/gitconfig</li>
+                  <li>Mac OS X - /usr/local/git/etc/gitconfig</li>
+                </ul>
+                <p>To edit the parameters at this level, you have to use the --system option;</p>
+              </dd>
+            </dl>
+            <dl class="query-list border ordered">
+              <dt>git configuration ( Global level )</dt>
+              <dd>
+                <p>
+                  The global level contains user-wide configurations; if you edit the configuration at this level, every user's repository will be affected.
+                  <br />
+                  This configuration is stored in the .gitconfig file usually located in:
+                </p>
+                <ul>
+                  <li>Windows - C:\Users\<UserName>\.gitconfig</li>
+                  <li>Linux - ~/.gitconfig</li>
+                  <li>Mac OS X - ~/.gitconfig</li>
+                </ul>
+                <p>To edit the parameters at this level, you have to use the --global option.</p>
+              </dd>
+            </dl>
+            <dl class="query-list border ordered">
+              <dt>git configuration ( Repository level )</dt>
+              <dd>
+                <p>
+                  The repository level contains repository only configurations; if you edit the configuration at this level, only the repository in use will be affected.
+                  <br />
+                  This configuration is stored in the config file located in the .git repository subfolder:
+                </p>
+                <ul>
+                  <li>Windows - C:\<MyRepoFolder>\.git\config</li>
+                  <li>Linux - ~/<MyRepoFolder>/.git/config</li>
+                  <li>Mac OS X - ~/<MyRepoFolder>/.git/config</li>
+                </ul>
+                <p>To edit parameters at this level, you can use the --local</p>
+              </dd>
+            </dl>
+          </article>
+          <article>
+            <h2 class="sub-heading">References</h2>
+            <ul>
+              <li><a href="https://www.packtpub.com/application-development/git-essentials">Git Essentials by Ferdinando Santacroce</a></li>
+              <li><a href="https://www.atlassian.com/dms/wac/images/landing/git/atlassian_git_cheatsheet.pdf">Git Cheat Sheet - Atlassian</a></li>
+              <li><a href="http://learngitbranching.js.org/">Learn Git Branching</a></li>
+              <li><a href="http://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a></li>
+              <li><a href="https://www.atlassian.com/git/tutorials/setting-up-a-repository">Setting up a repository</a></li>
+              <li><a href="http://stackoverflow.com/questions/2257196/git-pull-from-other-branch">Git: Pull from other branch</a></li>
+              <li><a href="http://stackoverflow.com/questions/3639342/whats-the-difference-between-git-reset-and-git-checkout">What's the difference between "git reset" and "git checkout"?</a></li>
+              <li><a href="https://arialdomartini.wordpress.com/2012/09/03/pre-emptive-commit-comments/">Preemptive commit comments</a></li>
+              <li><a href="http://www.commitlogsfromlastnight.com/">Commit Logs From Last Night</a></li>
+              <li><a href="http://www.gitminutes.com/">Git Minutes</a></li>
+            </ul>
+          </article>
+        </section>
+      </div>
+      <!-- end content-->
+      <script src="/script/vendor/highlight.pack.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+    </div>
+  </body>
+</html>
