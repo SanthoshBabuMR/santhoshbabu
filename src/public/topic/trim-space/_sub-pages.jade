@@ -1,0 +1,21 @@
+div.code-block
+  h2.code-block-heading code block: JavaScript
+  pre
+    code.hljs.javascript
+      | /**
+      |  * trim white spaces;
+      |  * @param   {string} val value to be trimmed
+      |  * @param   {bool} trimInBetween if true, convert multi spaces in between words/characters to single space
+      |  *
+      |  * @returns {string} return trimmed value
+      |  */
+      | export function trim (val, trimInBetween) {
+      |   if (typeof val === 'string' && val) {
+      |     if (trimInBetween) {
+      |       return val.replace(/\s+/g, ' ').trim();
+      |     } else {
+      |       return val.trim();
+      |     }
+      |   }
+      |   return val;
+      | }
